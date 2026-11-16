@@ -31,6 +31,14 @@ This subject workspace contains syllabus-aligned question banks, previous-year q
 - [PYQ analysis](./Unit-V/Unit-V-PYQ-Analysis.md)
 - [Unit V question bank](./Unit-V/Unit-V-Question-Bank.md)
 
+## Unit VI – Testing Framework
+
+- [Unit VI overview and study materials](./Unit-VI/README.md)
+- [Complete exam-ready answers](./Unit-VI/Unit-VI-Complete-Answers.md)
+- [Quick revision notes](./Unit-VI/Unit-VI-Quick-Revision.md)
+- [PYQ analysis](./Unit-VI/Unit-VI-PYQ-Analysis.md)
+- [Unit VI question bank](./Unit-VI/Unit-VI-Question-Bank.md)
+
 ## Question Bank
 
 - [Question Bank overview](./Question-Bank/README.md)
@@ -42,6 +50,7 @@ This subject workspace contains syllabus-aligned question banks, previous-year q
 - Unit III: software testing methodologies, static and dynamic test case design techniques, structural testing, black-box testing, experience-based testing, and functional and non-functional testing.
 - Unit IV: Software Quality Assurance and Software Quality Control.
 - Unit V: Automation Testing Tools and Performance Testing Tools.
+- Unit VI: Testing Framework, SQA, Six Sigma, ISO 9000, TQM, quality metrics, software maintenance, quality control tools and defect removal.
 
 **Syllabus note:** Selenium is included in Unit V in the supplied official syllabus. A supplementary Selenium answer was also prepared during Unit III study.
 
