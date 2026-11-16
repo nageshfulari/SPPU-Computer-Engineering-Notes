@@ -16,6 +16,14 @@ This subject workspace contains syllabus-aligned question banks, previous-year q
 - [PYQ analysis](./Unit-III/Unit-III-PYQ-Analysis.md)
 - [Unit III question bank](./Question-Bank/Unit-III-Questions.md)
 
+## Unit IV – Software Quality Assurance and Quality Control
+
+- [Unit IV overview and study materials](./Unit-IV/README.md)
+- [Complete exam-ready answers](./Unit-IV/Unit-IV-Complete-Answers.md)
+- [Quick revision notes](./Unit-IV/Unit-IV-Quick-Revision.md)
+- [PYQ analysis](./Unit-IV/Unit-IV-PYQ-Analysis.md)
+- [Unit IV question bank](./Unit-IV/Unit-IV-Question-Bank.md)
+
 ## Question Bank
 
 - [Question Bank overview](./Question-Bank/README.md)
