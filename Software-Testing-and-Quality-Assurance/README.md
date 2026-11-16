@@ -3,7 +3,6 @@
 **University:** Savitribai Phule Pune University (SPPU)  
 **Programme:** Fourth Year Computer Engineering  
 **Pattern:** 2019 Course  
-**Elective:** V  
 **End-Semester Examination:** 70 Marks
 
 This subject workspace contains syllabus-aligned question banks, previous-year question analysis, and exam-oriented answers.
@@ -24,6 +23,14 @@ This subject workspace contains syllabus-aligned question banks, previous-year q
 - [PYQ analysis](./Unit-IV/Unit-IV-PYQ-Analysis.md)
 - [Unit IV question bank](./Unit-IV/Unit-IV-Question-Bank.md)
 
+## Unit V – Automation Testing Tools / Performance Testing Tools
+
+- [Unit V overview and study materials](./Unit-V/README.md)
+- [Complete exam-ready answers](./Unit-V/Unit-V-Complete-Answers.md)
+- [Quick revision notes](./Unit-V/Unit-V-Quick-Revision.md)
+- [PYQ analysis](./Unit-V/Unit-V-PYQ-Analysis.md)
+- [Unit V question bank](./Unit-V/Unit-V-Question-Bank.md)
+
 ## Question Bank
 
 - [Question Bank overview](./Question-Bank/README.md)
@@ -32,9 +39,11 @@ This subject workspace contains syllabus-aligned question banks, previous-year q
 
 ## Syllabus coverage
 
-Unit III covers software testing methodologies, static and dynamic test case design techniques, structural testing, black-box testing, experience-based testing, and functional and non-functional testing.
+- Unit III: software testing methodologies, static and dynamic test case design techniques, structural testing, black-box testing, experience-based testing, and functional and non-functional testing.
+- Unit IV: Software Quality Assurance and Software Quality Control.
+- Unit V: Automation Testing Tools and Performance Testing Tools.
 
-**Syllabus note:** Selenium is included in the supplementary answer collection because it was requested during the Unit III preparation conversation. In the supplied official syllabus, Selenium belongs to Unit V – Automation Testing Tools / Performance Testing Tools.
+**Syllabus note:** Selenium is included in Unit V in the supplied official syllabus. A supplementary Selenium answer was also prepared during Unit III study.
 
 ## Preparation conventions
 
