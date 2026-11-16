@@ -39,3 +39,8 @@ The current Blockchain Technology workspace covers Units III–VI, for which syl
 - [Unit V – Complete Answers](Software-Testing-and-Quality-Assurance/Unit-V/Unit-V-Complete-Answers.md)
 - [Unit V – Quick Revision](Software-Testing-and-Quality-Assurance/Unit-V/Unit-V-Quick-Revision.md)
 - [Unit V – PYQ Analysis](Software-Testing-and-Quality-Assurance/Unit-V/Unit-V-PYQ-Analysis.md)
+- [Unit VI – Testing Framework](Software-Testing-and-Quality-Assurance/Unit-VI/README.md)
+- [Unit VI – Complete Answers](Software-Testing-and-Quality-Assurance/Unit-VI/Unit-VI-Complete-Answers.md)
+- [Unit VI – Quick Revision](Software-Testing-and-Quality-Assurance/Unit-VI/Unit-VI-Quick-Revision.md)
+- [Unit VI – Question Bank](Software-Testing-and-Quality-Assurance/Unit-VI/Unit-VI-Question-Bank.md)
+- [Unit VI – PYQ Analysis](Software-Testing-and-Quality-Assurance/Unit-VI/Unit-VI-PYQ-Analysis.md)
