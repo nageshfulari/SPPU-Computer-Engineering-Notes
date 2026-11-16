@@ -30,13 +30,14 @@
 | 15 | Explain Adhoc Testing with an example. | 1/7 | 6 | Medium |
 | 16 | Explain Risk-Based Testing. | 1/7 | 6 | Medium |
 | 17 | Explain Security Testing and Compatibility Testing. | 1/7 | 6 | Medium |
-| 18 | Explain Performance and Security Testing / Compatibility and Security Testing. | 1/7 | 6 | Medium |
+
+The May–June 2025 paper combines Performance Testing with Security Testing in one question and asks Compatibility Testing with Security Testing in another. Security and Compatibility each appear in that one paper; they are not counted as separate papers.
 
 ## C. Additional answer requested during preparation
 
 | No. | Question | Status | Syllabus placement |
 |---:|---|---|---|
-| 19 | Explain Selenium and its components. | Answer prepared | Unit V – Automation Testing Tools, not Unit III |
+| 18 | Explain Selenium and its components. | Answer prepared | Unit V – Automation Testing Tools, not Unit III |
 
 ## D. Important syllabus topics not yet prepared as standalone answers
 
