@@ -10,6 +10,7 @@ This folder contains consolidated questions and evidence-based analysis for Soft
 | [PYQ Repeated Questions](./PYQ-Repeated-Questions.md) | Topic-level repeated-question summary and study priorities. |
 | [PYQ Frequency Analysis](./PYQ-Frequency-Analysis.md) | Paper-wise counts, session labels, marks and methodology. |
 | [Unit V Question Bank](../Unit-V/Unit-V-Question-Bank.md) | Unit V consolidated questions, observed marks, seven-paper frequency and syllabus-only topics. |
+| [Unit VI Question Bank](../Unit-VI/Unit-VI-Question-Bank.md) | Unit VI consolidated questions, marks, paper-level frequency, priorities and syllabus-only topics. |
 
 ## Counting method
 
