@@ -13,7 +13,7 @@
 - [Unit III – Blockchain Platforms and Consensus](Unit-III/README.md)
 - [Unit IV – Cryptocurrency: Bitcoin and Token](Unit-IV/README.md)
 - [Unit V – Blockchain Ethereum Platform using Solidity](Unit-V/README.md)
-- [Unit VI – Blockchain Case Studies](Unit-VI/README.md)
+- [Unit VI – Blockchain Applications and Case Studies](Unit-VI/README.md)
 
 ## Source set used for the initial question bank
 
@@ -35,11 +35,6 @@ Each paper is a 70-mark, 2.5-hour examination with eight questions arranged as f
 
 The available syllabus extract in the current source set specifies Units III–VI. The master study instructions require the complete official syllabus, including Units I and II, before whole-subject prediction. Units I–II are therefore intentionally not fabricated or populated here.
 
-## How notes will be maintained
+## Completed Unit Materials
 
-1. Finalize the PYQ question bank.
-2. Prepare one answer at a time, following the supplied Blockchain Technology master prompt.
-3. Add detailed answers to the relevant unit's `README.md`.
-4. Add diagrams to the unit's `images/` folder and embed them with relative paths.
-5. Validate Markdown and links.
-6. Create a ZIP archive after each completed unit.
+Units III, IV, V and VI have separate folders containing complete exam answers, quick revision notes, PYQ analysis and a unit README. ZIP backups remain a separate task.
