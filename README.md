@@ -22,3 +22,13 @@ Subject-wise notes, previous-year question banks, diagrams, and exam-oriented an
 ## Scope note
 
 The current Blockchain Technology workspace covers Units III–VI, for which syllabus details and seven question papers were supplied. Units I–II have not yet been added or verified here. Whole-subject predictions remain provisional until the complete official syllabus and relevant papers are reviewed.
+
+
+## Software Testing and Quality Assurance (410245-D)
+
+- [Subject overview](Software-Testing-and-Quality-Assurance/README.md)
+- [Question Bank – Overview](Software-Testing-and-Quality-Assurance/Question-Bank/README.md)
+- [Unit III – Test Case Design Techniques](Software-Testing-and-Quality-Assurance/Unit-III/README.md)
+- [Unit III – Complete Answers](Software-Testing-and-Quality-Assurance/Unit-III/Unit-III-Complete-Answers.md)
+- [Unit III – Quick Revision](Software-Testing-and-Quality-Assurance/Unit-III/Unit-III-Quick-Revision.md)
+- [Unit III – PYQ Analysis](Software-Testing-and-Quality-Assurance/Unit-III/Unit-III-PYQ-Analysis.md)
