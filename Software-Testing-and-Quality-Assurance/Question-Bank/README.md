@@ -9,6 +9,7 @@ This folder contains consolidated questions and evidence-based analysis for Soft
 | [Unit III Questions](./Unit-III-Questions.md) | Consolidated Unit III repeated questions and additional syllabus questions. |
 | [PYQ Repeated Questions](./PYQ-Repeated-Questions.md) | Topic-level repeated-question summary and study priorities. |
 | [PYQ Frequency Analysis](./PYQ-Frequency-Analysis.md) | Paper-wise counts, session labels, marks and methodology. |
+| [Unit V Question Bank](../Unit-V/Unit-V-Question-Bank.md) | Unit V consolidated questions, observed marks, seven-paper frequency and syllabus-only topics. |
 
 ## Counting method
 
@@ -16,4 +17,4 @@ A topic is counted at most once per paper for its paper-level frequency, even if
 
 ## Source set
 
-Seven supplied SPPU STQA papers were reviewed, spanning May–June 2023 through November–December 2025. See the frequency-analysis file for paper codes and limitations.
+Seven supplied SPPU STQA papers were reviewed, spanning May–June 2023 through November–December 2025. See each unit's PYQ analysis for paper codes, mapping notes and limitations.
