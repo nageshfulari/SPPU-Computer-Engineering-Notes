@@ -238,20 +238,21 @@ A **Sequence Model** represents interactions among objects in chronological orde
 6. **Destruction Occurrence:** An X at the end of a lifeline indicates that the object is destroyed.
 
 ### Example – ATM Cash Withdrawal
-\`\`\`text
-Customer          ATM             Bank Server
-   |               |                   |
-   |--Insert Card->|                   |
-   |--Enter PIN--->|                   |
-   |               |--Validate PIN---->|
-   |               |<--PIN Valid-------|
-   |--Enter Amount>|                   |
-   |               |--Check Balance--->|
-   |               |<--Approved--------|
-   |               |--Dispense Cash    |
-   |<--Receive Cash|                   |
-   |               |                   |
-\`\`\`
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant ATM
+    participant Bank as Bank Server
+    Customer->>ATM: Insert card
+    Customer->>ATM: Enter PIN
+    ATM->>Bank: Validate PIN
+    Bank-->>ATM: PIN valid
+    Customer->>ATM: Enter amount
+    ATM->>Bank: Check balance
+    Bank-->>ATM: Withdrawal approved
+    ATM->>ATM: Dispense cash
+    ATM-->>Customer: Deliver cash
+```
 
 **Conclusion:** A Sequence Diagram explains which participants communicate, what messages they exchange and the order in which messages occur.
 
@@ -263,26 +264,44 @@ Customer          ATM             Bank Server
 Customer, Shopping Application, Product Catalogue, Cart, Order Service, Payment Gateway and Inventory Service.
 
 ### Sequence Diagram
-\`\`\`text
-Customer  App  Catalogue  Cart  Order  Payment  Inventory
-   |       |       |       |      |       |         |
-   |--Open->|       |       |      |       |         |
-   |--Search>|      |       |      |       |         |
-   |       |--Find Products->|     |       |         |
-   |       |<--Product List--|     |       |         |
-   |<--Show Products|       |      |       |         |
-   |--Select Product>|      |      |       |         |
-   |       |--Add Item------>|      |       |         |
-   |       |<--Cart Updated--|      |       |         |
-   |--Checkout>|             |      |       |         |
-   |       |--Create Order---------->|       |         |
-   |       |                         |--Reserve Stock->|
-   |       |                         |<--Stock Status--|
-   |       |                         |--Request Payment----->|
-   |       |                         |<--Payment Result------|
-   |       |<--Order Confirmation----|       |         |
-   |<--Display Confirmation|         |       |         |
-\`\`\`
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant App as Shopping Application
+    participant Catalogue as Product Catalogue
+    participant Cart
+    participant Order as Order Service
+    participant Inventory as Inventory Service
+    participant Payment as Payment Gateway
+    Customer->>App: Open application
+    Customer->>App: Search products
+    App->>Catalogue: Find matching products
+    Catalogue-->>App: Product list
+    App-->>Customer: Display products
+    Customer->>App: Select product
+    App->>Cart: Add item
+    Cart-->>App: Cart updated
+    Customer->>App: Checkout
+    App->>Order: Create pending order
+    Order->>Inventory: Reserve stock
+    Inventory-->>Order: Stock status
+    alt Stock available
+        Order->>Payment: Request payment
+        Payment-->>Order: Payment result
+        alt Payment successful
+            Order->>Inventory: Confirm stock reservation
+            Order-->>App: Confirm order
+            App-->>Customer: Display confirmation
+        else Payment failed
+            Order->>Inventory: Release stock reservation
+            Order-->>App: Order not confirmed
+            App-->>Customer: Display payment failure
+        end
+    else Stock unavailable
+        Order-->>App: Reject order
+        App-->>Customer: Display out-of-stock message
+    end
+```
 
 ### Explanation
 1. Customer searches for products and the application retrieves matching products from the catalogue.
@@ -301,24 +320,34 @@ Customer  App  Catalogue  Cart  Order  Payment  Inventory
 Customer, Rental Application, Car Database, Availability Service, Booking Service and Notification Service.
 
 ### Sequence Diagram
-\`\`\`text
-Customer  Rental App  Car DB  Availability  Booking  Notification
-   |          |        |          |           |          |
-   |--Choose Car Type->|          |           |          |
-   |          |--Get Cars-------->|           |          |
-   |          |<--Car List--------|           |          |
-   |<--Display Cars--|            |           |          |
-   |--Select Car and Dates------->|           |          |
-   |          |--Check Availability---------->|          |
-   |          |<--Available / Not Available---|          |
-   |<--Show Rates--|              |           |          |
-   |--Confirm Booking------------>|           |          |
-   |          |------------------------------>|          |
-   |          |<--Booking ID and Details------|          |
-   |          |----------------------------------------->|
-   |          |<----------------Confirmation Sent--------|
-   |<--Electronic Confirmation|    |          |          |
-\`\`\`
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant App as Rental Application
+    participant DB as Car Database
+    participant Availability as Availability Service
+    participant Booking as Booking Service
+    participant Notify as Notification Service
+    Customer->>App: Choose car type
+    App->>DB: Retrieve matching cars
+    DB-->>App: Car list
+    App-->>Customer: Display cars
+    Customer->>App: Select car and rental dates
+    App->>Availability: Check car and dates
+    Availability-->>App: Availability and rate
+    App-->>Customer: Display availability and rate
+    alt Car available and customer confirms
+        Customer->>App: Confirm booking
+        App->>Booking: Create booking
+        Booking->>DB: Store booking details
+        DB-->>Booking: Booking ID
+        Booking-->>App: Booking confirmed
+        App->>Notify: Send confirmation
+        Notify-->>Customer: Electronic confirmation
+    else Car unavailable or customer cancels
+        App-->>Customer: Show alternatives or cancellation
+    end
+```
 
 ### Explanation
 1. Customer selects a car category, such as family car or sports car.
@@ -346,33 +375,31 @@ An **Activity** is a behavior consisting of coordinated actions performed to ach
 5. **PIN Change:** Customer selects PIN change, verifies the existing PIN and enters a new PIN. The system validates and updates it.
 
 ### Activity Diagram – Cash Withdrawal
-\`\`\`text
-             ●
-             |
-        Insert Card
-             |
-         Enter PIN
-             |
-       Validate PIN
-             |
-        <PIN Valid?>
-         /       \
-       No         Yes
-       |           |
-  Show Error   Enter Amount
-       |           |
-       |       Check Balance
-       |           |
-       |    <Sufficient Funds?>
-       |       /       \
-       |     No         Yes
-       |     |           |
-       |  Show Error  Dispense Cash
-       |     |           |
-       +-----+------ Print Receipt (if requested)
-                         |
-                         ◎
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Insert card]
+    B --> C[Enter PIN]
+    C --> D[Validate PIN]
+    D --> E{PIN valid?}
+    E -- No --> F[Show error]
+    F --> G{Retry available?}
+    G -- Yes --> C
+    G -- No --> H[End session]
+    E -- Yes --> I[Select cash withdrawal]
+    I --> J[Enter amount]
+    J --> K[Check account balance and ATM cash]
+    K --> L{Sufficient funds and cash?}
+    L -- No --> M[Show withdrawal error]
+    M --> N[Cancel or select another amount]
+    N --> J
+    L -- Yes --> O[Dispense cash]
+    O --> P[Record transaction]
+    P --> Q{Print receipt?}
+    Q -- Yes --> R[Print receipt]
+    Q -- No --> S((End))
+    R --> S
+    H --> S
+```
 
 **Conclusion:** ATM activities describe individual banking operations. The diagram shows workflow and decisions involved in cash withdrawal.
 
@@ -394,28 +421,31 @@ An **Activity** is a behavior consisting of coordinated actions performed to ach
 ### Simple Difference in Representation
 
 **Sequence Diagram**
-\`\`\`text
-Customer       ATM       Bank Server
-   |            |              |
-   |--Enter PIN>|              |
-   |            |--Validate--->|
-   |            |<--Result------|
-\`\`\`
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant ATM
+    participant Bank as Bank Server
+    Customer->>ATM: Enter PIN
+    ATM->>Bank: Validate PIN
+    Bank-->>ATM: Validation result
+    Customer->>ATM: Enter amount
+    ATM->>Bank: Check balance
+    Bank-->>ATM: Approval result
+    ATM-->>Customer: Dispense cash or report result
+```
 
 **Activity Diagram**
-\`\`\`text
-   ●
-   |
-Enter PIN
-   |
-Validate PIN
-   |
-<PIN Valid?>
-  /      \
- No      Yes
- |        |
-Error   Show Menu
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Enter PIN]
+    B --> C[Validate PIN]
+    C --> D{PIN valid?}
+    D -- No --> E[Display error]
+    D -- Yes --> F[Show menu]
+    E --> G((End))
+    F --> G
+```
 
 **Conclusion:** A Sequence Diagram answers which participant communicates with whom and in what order. An Activity Diagram answers what steps are performed and how the workflow proceeds.
 
@@ -424,42 +454,35 @@ Error   Show Menu
 ## Q10. Draw an Activity Diagram for ATM Machine.
 
 ### Activity Diagram
-\`\`\`text
-                  ●
-                  |
-             Insert Card
-                  |
-              Enter PIN
-                  |
-             Validate PIN
-                  |
-             <PIN Valid?>
-              /       \
-            No         Yes
-            |           |
-       Display Error  Display Menu
-            |           |
-       Re-enter PIN  Select Transaction
-                        |
-                 <Transaction Type?>
-                  /       |       \
-             Withdraw  Balance   Deposit
-                |       Enquiry    |
-           Enter Amount   |    Enter Deposit
-                |      Get Balance  Details
-           Check Balance  |          |
-                |      Display     Process
-          <Enough Funds?> Balance   Deposit
-             /     \       |          |
-           No       Yes    |       Update Record
-           |         |     |          |
-       Display   Dispense  |          |
-        Error      Cash    |          |
-           \         |    /          /
-            +---- Print Receipt (optional)
-                        |
-                        ◎
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Insert card]
+    B --> C[Enter PIN]
+    C --> D[Validate PIN]
+    D --> E{PIN valid?}
+    E -- No --> F[Display error]
+    F --> G{Retry PIN?}
+    G -- Yes --> C
+    G -- No --> Z((End))
+    E -- Yes --> H[Display transaction menu]
+    H --> I{Select transaction}
+    I -- Withdraw --> J[Enter amount]
+    J --> K[Check balance and cash]
+    K --> L{Sufficient amount?}
+    L -- No --> M[Display insufficient funds]
+    M --> H
+    L -- Yes --> N[Dispense cash]
+    I -- Balance enquiry --> O[Retrieve and display balance]
+    I -- Deposit --> P[Enter deposit details]
+    P --> Q[Process deposit]
+    N --> R{Print receipt?}
+    O --> R
+    Q --> R
+    R -- Yes --> S[Print receipt]
+    R -- No --> T((End))
+    S --> T
+    Z --> T
+```
 
 ### Explanation
 1. Customer inserts the ATM card and enters the PIN.
@@ -487,33 +510,23 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 - **Concurrent Activities:** A thick bar represents a fork when one flow splits into parallel flows and a join when parallel flows synchronize.
 
 ### 3. Activity Diagram – Email Login
-\`\`\`text
-                 ●
-                 |
-          Open Email Website
-                 |
-          Enter Email Address
-                 |
-            Enter Password
-                 |
-             Click Login
-                 |
-        Validate Credentials
-                 |
-         <Credentials Valid?>
-             /        \
-           No          Yes
-           |            |
-      Display Error  Authenticate User
-           |            |
-      Re-enter Data  Load Inbox
-           |            |
-           +----------->|
-                        v
-                 Display Inbox
-                        |
-                        ◎
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Open email website]
+    B --> C[Enter email address]
+    C --> D[Enter password]
+    D --> E[Click Login]
+    E --> F[Validate credentials]
+    F --> G{Credentials valid?}
+    G -- No --> H[Display error]
+    H --> I{Retry?}
+    I -- Yes --> C
+    I -- No --> J((End))
+    G -- Yes --> K[Authenticate user]
+    K --> L[Load inbox]
+    L --> M[Display inbox]
+    M --> J
+```
 
 ### Explanation
 1. User opens the email website or application.
@@ -529,50 +542,30 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 ## Q12. Draw an Activity Diagram for Hospital Management System.
 
 ### Activity Diagram
-\`\`\`text
-                  ●
-                  |
-           Patient Arrives
-                  |
-          Register / Identify
-                  |
-          Check Patient Record
-                  |
-          <Existing Patient?>
-             /          \
-           Yes            No
-            |              |
-            |        Create Record
-            +-------+------+
-                    |
-             Book OPD Visit
-                    |
-              Consult Doctor
-                    |
-              Examine Patient
-                    |
-               Diagnose
-                    |
-          <Admission Required?>
-              /          \
-            Yes            No
-             |              |
-       Admit Patient   Prescribe Medicine
-             |              |
-       Allocate Bed         |
-             |              |
-       Provide Treatment    |
-             +-------+------+
-                     |
-               Generate Bill
-                     |
-                Make Payment
-                     |
-               Complete Visit /
-                 Discharge
-                     |
-                     ◎
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Patient arrives]
+    B --> C[Register or identify patient]
+    C --> D[Check patient record]
+    D --> E{Existing patient?}
+    E -- No --> F[Create patient record]
+    E -- Yes --> G[Book OPD visit]
+    F --> G
+    G --> H[Consult doctor]
+    H --> I[Examine and diagnose]
+    I --> J{Admission required?}
+    J -- Yes --> K[Admit patient and allocate bed]
+    K --> L[Provide treatment]
+    J -- No --> M[Prescribe medicine]
+    L --> N[Generate bill]
+    M --> N
+    N --> O[Record payment]
+    O --> P{Inpatient?}
+    P -- Yes --> Q[Discharge patient]
+    P -- No --> R[Complete OPD visit]
+    Q --> S((End))
+    R --> S
+```
 
 ### Explanation
 1. Patient arrives and is registered or identified using an existing record.
@@ -590,51 +583,30 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 ## Q13. Draw an Activity Diagram for describing how selling a two-wheeler to a customer takes place at a dealer's place. Explain the notations used.
 
 ### Activity Diagram
-\`\`\`text
-                    ●
-                    |
-             Customer Visits Dealer
-                    |
-              Enquire About Models
-                    |
-              Assign Salesperson
-                    |
-          Salesperson Shows Vehicles
-                    |
-             Customer Selects Model
-                    |
-          <Accessories Required?>
-              /             \
-            Yes               No
-             |                 |
-       Select Accessories     |
-             +--------+--------+
-                      |
-              Prepare Quotation
-                      |
-              Customer Reviews
-                 Quotation
-                      |
-               <Wants to Buy?>
-                 /       \
-               No         Yes
-               |           |
-          End Enquiry   Check Stock
-                           |
-                    <Vehicle Available?>
-                      /          \
-                    No            Yes
-                    |              |
-              Inform Customer  Complete Payment
-                    |              |
-               End Enquiry    Generate Invoice
-                                   |
-                              Register Vehicle
-                                   |
-                              Deliver Vehicle
-                                   |
-                                   ◎
-\`\`\`
+```mermaid
+flowchart TD
+    A((Start)) --> B[Customer visits dealer]
+    B --> C[Enquire about models]
+    C --> D[Assign salesperson]
+    D --> E[Show available vehicles]
+    E --> F[Customer selects model]
+    F --> G{Accessories required?}
+    G -- Yes --> H[Select accessories]
+    G -- No --> I[Prepare quotation]
+    H --> I
+    I --> J[Customer reviews quotation]
+    J --> K{Customer wants to buy?}
+    K -- No --> Z((End enquiry))
+    K -- Yes --> L[Check vehicle stock]
+    L --> M{Vehicle available?}
+    M -- No --> N[Inform customer or offer alternative]
+    N --> Z
+    M -- Yes --> O[Complete payment]
+    O --> P[Generate invoice]
+    P --> Q[Complete registration formalities]
+    Q --> R[Deliver vehicle]
+    R --> S((End))
+```
 
 ### Explanation
 1. Customer visits the dealership and enquires about available two-wheeler models.
@@ -675,17 +647,19 @@ Common interaction diagrams include Sequence, Communication (Collaboration), Int
 6. **Destruction Occurrence:** An X marking the end of an object's lifeline when destroyed.
 
 ### Example – ATM Interaction
-\`\`\`text
-Customer          ATM          Bank Server
-   |               |                |
-   |--Enter PIN--->|                |
-   |               |--Validate PIN->|
-   |               |<--Valid---------|
-   |--Enter Amount>|                |
-   |               |--Check Balance>|
-   |               |<--Approved------|
-   |<--Cash--------|                |
-\`\`\`
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant ATM
+    participant Bank as Bank Server
+    Customer->>ATM: Enter PIN
+    ATM->>Bank: Validate PIN
+    Bank-->>ATM: Valid
+    Customer->>ATM: Enter amount
+    ATM->>Bank: Check balance
+    Bank-->>ATM: Approved
+    ATM-->>Customer: Deliver cash
+```
 
 **Conclusion:** An Interaction Diagram models communication among objects. A Sequence Diagram specifically emphasizes chronological order of exchanged messages.
 
@@ -710,25 +684,15 @@ The **State Model** represents the dynamic behavior of an object. It shows the s
 **Class Model:** Account may have attributes accountNumber, balance and status, and operations deposit(), withdraw() and block().
 
 **State Model**
-\`\`\`text
-             ●
-             |
-          Active
-             |
-        blockAccount()
-             v
-          Blocked
-             |
-       unblockAccount()
-             v
-          Active
-             |
-        closeAccount()
-             v
-          Closed
-             |
-             ◎
-\`\`\`
+```mermaid
+stateDiagram-v2
+    [*] --> Active
+    Active --> Blocked: blockAccount()
+    Blocked --> Active: unblockAccount()
+    Active --> Closed: closeAccount()
+    Blocked --> Closed: closeAccount()
+    Closed --> [*]
+```
 
 The Class Model defines the Account class and its features; the State Model describes how an Account object changes from Active to Blocked or Closed.
 
@@ -739,28 +703,18 @@ The Class Model defines the Account class and its features; the State Model desc
 ## Q16. Draw a State Diagram for Cash Dispenser and explain concurrency.
 
 ### State Diagram – Cash Dispenser
-\`\`\`text
-                  ●
-                  |
-                 Idle
-                  |
-          dispenseRequest(amount)
-                  |
-          Check Cash Availability
-                  |
-           <Cash Available?>
-              /          \
-            No            Yes
-            |              |
-         Out of Cash   Dispensing
-            |              |
-        refillCash     dispenseComplete
-            |              |
-            v              v
-       Cash Available    Idle
-            |
-            +-----------> Idle
-\`\`\`
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> CheckingCash: dispenseRequest(amount)
+    CheckingCash --> OutOfCash: cash unavailable
+    CheckingCash --> Dispensing: cash available
+    OutOfCash --> Idle: refillCash()
+    Dispensing --> Idle: dispenseComplete
+    Dispensing --> Fault: dispensingError
+    Fault --> Idle: reset
+    Idle --> [*]
+```
 
 ### Explanation
 1. **Idle:** Dispenser waits for a dispense request.
@@ -774,19 +728,24 @@ The Class Model defines the Account class and its features; the State Model desc
 
 Example: While a cash dispenser is active, its dispensing mechanism handles a request while a monitoring region independently monitors cash levels and reports low cash.
 
-\`\`\`text
-+---------------------------------------------+
-|          Cash Dispenser Active              |
-|                                             |
-| Dispensing Region       Monitoring Region   |
-| ●                       ●                   |
-| |                       |                   |
-| v                       v                   |
-| Ready / Dispense        Check Cash Level    |
-| |                       |                   |
-| Complete                Low Cash Alert      |
-+---------------------------------------------+
-\`\`\`
+```mermaid
+stateDiagram-v2
+    [*] --> Active
+    state Active {
+        state "Dispensing Region" as DispensingRegion {
+            [*] --> Ready
+            Ready --> Dispensing: dispense request
+            Dispensing --> Ready: dispense complete
+        }
+        --
+        state "Monitoring Region" as MonitoringRegion {
+            [*] --> Monitoring
+            Monitoring --> LowCashAlert: cash below threshold
+            LowCashAlert --> Monitoring: cash replenished
+        }
+    }
+    Active --> [*]
+```
 
 The two regions are active concurrently; one controls dispensing while the other monitors cash availability.
 
@@ -797,31 +756,17 @@ The two regions are active concurrently; one controls dispensing while the other
 ## Q17. Draw a State Diagram for Telephone Line Connection. Explain Event, State and Transition in the diagram.
 
 ### State Diagram
-\`\`\`text
-                  ●
-                  |
-                 Idle
-                  |
-             liftHandset
-                  v
-              Dial Tone
-                  |
-             dialNumber
-                  v
-             Connecting
-              /       \
-      busySignal     callAnswered
-          |               |
-          v               v
-       Busy Tone       Connected
-          |               |
-       hangUp           hangUp
-          |               |
-          +-------+-------+
-                  |
-                  v
-                 Idle
-\`\`\`
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> DialTone: liftHandset
+    DialTone --> Connecting: dialNumber
+    Connecting --> BusyTone: busySignal
+    Connecting --> Connected: callAnswered
+    BusyTone --> Idle: hangUp
+    Connected --> Idle: hangUp
+    Idle --> [*]
+```
 
 ### 1. State
 A **State** is a condition of an object at a particular time. Telephone line states include:
