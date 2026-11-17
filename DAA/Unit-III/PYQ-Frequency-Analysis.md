@@ -22,7 +22,7 @@ The counts below are based on papers in this reviewed set. They are not a predic
 |---|---|---|---|---|---|---|---:|
 | Greedy principle / control abstraction / analysis | Yes | Yes | Yes | Yes | Yes | — | 5/6 |
 | Job sequencing / deadline scheduling | — | Yes | Yes | — | Yes* | — | 3/6 |
-| Knapsack using Greedy / fractional formulation | — | Yes | — | Yes | Yes | Yes | 4/6 |
+| Knapsack using Greedy / fractional formulation | — | — | — | Yes | Yes | Yes | 3/6 |
 | Activity selection | — | — | — | — | — | Yes | 1/6 |
 | Dynamic Programming principle / control abstraction | Yes | — | — | Yes | Yes* | Yes | 4/6 |
 | Principle of Optimality / optimal substructure | — | — | — | Yes | Yes | Yes | 3/6 |
