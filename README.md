@@ -29,6 +29,12 @@ Subject-wise notes, previous-year question banks, diagrams, and exam-oriented an
 - [Unit V – Quick Revision](OOMD/Unit-V/Quick-Revision.md)
 - [Unit V – Question Bank](OOMD/Unit-V/Question-Bank.md)
 - [Unit V – PYQ Frequency and Syllabus Coverage Analysis](OOMD/Unit-V/PYQ-Frequency-Analysis.md)
+- [Unit VI – Design Pattern](OOMD/Unit-VI/README.md)
+- [Unit VI – Complete Answers](OOMD/Unit-VI/Complete-Answers.md)
+- [Unit VI – Supplementary Syllabus Answers](OOMD/Unit-VI/Supplementary-Syllabus-Answers.md)
+- [Unit VI – Quick Revision](OOMD/Unit-VI/Quick-Revision.md)
+- [Unit VI – Question Bank](OOMD/Unit-VI/Question-Bank.md)
+- [Unit VI – PYQ and Syllabus Coverage Analysis](OOMD/Unit-VI/PYQ-Frequency-Analysis.md)
 
 ## Study and contribution conventions
 
