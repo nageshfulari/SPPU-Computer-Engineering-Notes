@@ -4,7 +4,7 @@
 **Course:** Fourth Year Computer Engineering, SPPU 2019 Course  
 **Unit:** III – Advanced State Modeling and Interaction Modeling
 
-> Answers are arranged in the order of the 18-question Unit III preparation list. Diagrams use plain text so they remain readable in GitHub Markdown and can be reproduced by hand.
+> Answers are arranged in the order of the 18-question Unit III preparation list. Diagrams use GitHub-rendered Mermaid notation for clearer viewing; editable diagram source files are stored in the `diagrams/` folder.
 
 ---
 
@@ -19,34 +19,37 @@ A **composite state** is a state that contains one or more substates (nested sta
 ### Diagrams
 
 **Sequential composite state – ATM transaction**
-\`\`\`text
-+--------------------------------+
-|       ATM Transaction          |
-|                                |
-|  ● --> Enter PIN --> Verify    |
-|                         |      |
-|                         v      |
-|                    Select Txn  |
-|                         |      |
-|                         v      |
-|                     Complete   |
-+--------------------------------+
+\`\`\`mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> ATMTransaction
+    state "ATM Transaction" as ATMTransaction {
+        [*] --> EnterPIN
+        EnterPIN --> VerifyPIN
+        VerifyPIN --> SelectTransaction
+        SelectTransaction --> CompleteTransaction
+        CompleteTransaction --> [*]
+    }
+    ATMTransaction --> [*]
 \`\`\`
 
 **Concurrent composite state – ATM operation**
-\`\`\`text
-+---------------------------------------------+
-|                 ATM Active                  |
-|                                             |
-| Display Region          Network Region      |
-| ●                       ●                   |
-| |                       |                   |
-| v                       v                   |
-| Show Menu               Connect to Bank     |
-| |                       |                   |
-| v                       v                   |
-| Update Screen           Validate Request    |
-+---------------------------------------------+
+\`\`\`mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> ATMActive
+    state "ATM Active" as ATMActive {
+        state "Display Region" as DisplayRegion {
+            [*] --> ShowMenu
+            ShowMenu --> UpdateScreen
+        }
+        --
+        state "Network Region" as NetworkRegion {
+            [*] --> ConnectToBank
+            ConnectToBank --> ValidateRequest
+        }
+    }
+    ATMActive --> [*]
 \`\`\`
 
 ### Advantages
@@ -72,15 +75,19 @@ A **composite state** is a state that contains one or more substates (nested sta
 4. **Generalization:** Inheritance between actors or use cases. A solid line with a hollow triangle points to the general parent. Example: Savings Account and Current Account specialize Account.
 
 ### Example
-\`\`\`text
-Customer ---- (Withdraw Cash)
-                    |
-                    | <<include>>
-                    v
-              (Validate PIN)
+\`\`\`mermaid
+flowchart LR
+    Customer["🧍 Customer"]
+    Withdraw([Withdraw Cash])
+    Validate([Validate PIN])
+    Print([Print Receipt])
+    Savings([Savings Account])
+    Account([Account])
 
-(Print Receipt) - - - - - -▷ (Withdraw Cash)
-                 <<extend>>
+    Customer --- Withdraw
+    Withdraw -. "<<include>>" .-> Validate
+    Print -. "<<extend>>" .-> Withdraw
+    Savings --|> Account
 \`\`\`
 
 **Conclusion:** Actors represent external roles, use cases represent system functions, and relationships describe communication, reuse and specialization.
@@ -95,20 +102,43 @@ Customer ---- (Withdraw Cash)
 - **Maintenance Staff:** Refills cash and maintains the ATM.
 
 ### Use Case Diagram
-\`\`\`text
-             Customer                 Bank Server
-                |                          |
-      +---------|--------------------------|------+
-      |         ATM System                        |
-      |                                           |
-      |  (Withdraw Cash)       (Validate PIN)     |
-      |  (Check Balance)       (Get Balance)      |
-      |  (Deposit Cash)        (Update Account)   |
-      |  (Change PIN)          (Verify PIN)       |
-      |                                           |
-      |  Maintenance Staff -- (Refill Cash)       |
-      |                      (Maintain ATM)       |
-      +-------------------------------------------+
+\`\`\`mermaid
+flowchart LR
+    Customer["🧍 Customer"]
+    Bank["🏦 Bank Server"]
+    Staff["🧍 Maintenance Staff"]
+
+    subgraph ATM["ATM System"]
+        Withdraw([Withdraw Cash])
+        Balance([Check Balance])
+        Deposit([Deposit Cash])
+        ChangePIN([Change PIN])
+        Validate([Validate PIN])
+        GetBalance([Get Balance])
+        Update([Update Account])
+        Verify([Verify PIN])
+        Refill([Refill Cash])
+        Maintain([Maintain ATM])
+    end
+
+    Customer --- Withdraw
+    Customer --- Balance
+    Customer --- Deposit
+    Customer --- ChangePIN
+    Bank --- Validate
+    Bank --- GetBalance
+    Bank --- Update
+    Bank --- Verify
+    Staff --- Refill
+    Staff --- Maintain
+
+    Withdraw -. "<<include>>" .-> Validate
+    Withdraw -. "<<include>>" .-> Update
+    Balance -. "<<include>>" .-> Validate
+    Balance -. "<<include>>" .-> GetBalance
+    Deposit -. "<<include>>" .-> Validate
+    Deposit -. "<<include>>" .-> Update
+    ChangePIN -. "<<include>>" .-> Verify
 \`\`\`
 
 ### Use Case Scenario 1 – Withdraw Cash
@@ -145,28 +175,39 @@ Customer ---- (Withdraw Cash)
 - **Payment Gateway:** Processes online payments.
 
 ### Use Case Diagram
-\`\`\`text
-                 Customer
-                    |
-      +-------------|----------------------------+
-      |       Online Reservation System          |
-      |                                          |
-      |   (Register / Login)                     |
-      |   (Search Availability)                  |
-      |   (View Details)                         |
-      |   (Make Reservation)                     |
-      |       |          |                       |
-      |       |          +-- (Enter Details)     |
-      |       +-- <<include>> -- (Process Payment)|
-      |                         ^                |
-      |                         |                |
-      |                    Payment Gateway       |
-      |   (Confirm Reservation)                 |
-      |   (View Reservation)                    |
-      |   (Cancel Reservation)                   |
-      |   Administrator -- (Manage Availability)|
-      |                 -- (Manage Reservations) |
-      +------------------------------------------+
+\`\`\`mermaid
+flowchart LR
+    Customer["🧍 Customer"]
+    Admin["🧍 Administrator"]
+    Gateway["💳 Payment Gateway"]
+
+    subgraph Reservation["Online Reservation System"]
+        Login([Register / Login])
+        Search([Search Availability])
+        Details([View Details])
+        Make([Make Reservation])
+        Enter([Enter Details])
+        Pay([Process Payment])
+        Confirm([Confirm Reservation])
+        View([View Reservation])
+        Cancel([Cancel Reservation])
+        Availability([Manage Availability])
+        Manage([Manage Reservations])
+    end
+
+    Customer --- Login
+    Customer --- Search
+    Customer --- Details
+    Customer --- Make
+    Customer --- Confirm
+    Customer --- View
+    Customer --- Cancel
+    Admin --- Availability
+    Admin --- Manage
+    Gateway --- Pay
+
+    Make -. "<<include>>" .-> Enter
+    Make -. "<<include>>" .-> Pay
 \`\`\`
 
 ### Explanation
