@@ -1,0 +1,11 @@
+stateDiagram-v2
+    direction LR
+    [*] --> ATMTransaction
+    state "ATM Transaction" as ATMTransaction {
+        [*] --> EnterPIN
+        EnterPIN --> VerifyPIN
+        VerifyPIN --> SelectTransaction
+        SelectTransaction --> CompleteTransaction
+        CompleteTransaction --> [*]
+    }
+    ATMTransaction --> [*]
