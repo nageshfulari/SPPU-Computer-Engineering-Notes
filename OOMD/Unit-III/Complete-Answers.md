@@ -87,7 +87,7 @@ flowchart LR
     Customer --- Withdraw
     Withdraw -. "<<include>>" .-> Validate
     Print -. "<<extend>>" .-> Withdraw
-    Savings --|> Account
+    Savings -.->|generalizes| Account
 ```
 
 **Conclusion:** Actors represent external roles, use cases represent system functions, and relationships describe communication, reuse and specialization.
