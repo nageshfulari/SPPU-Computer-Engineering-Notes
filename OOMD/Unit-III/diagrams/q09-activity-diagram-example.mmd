@@ -1,0 +1,8 @@
+flowchart TD
+    A((Start)) --> B[Enter PIN]
+    B --> C[Validate PIN]
+    C --> D{PIN valid?}
+    D -- No --> E[Display error]
+    D -- Yes --> F[Show menu]
+    E --> G((End))
+    F --> G
