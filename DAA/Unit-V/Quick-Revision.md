@@ -110,7 +110,7 @@ Design for:
 - Approaches: Greedy heuristics, DP for selected variants, Integer Programming, Branch-and-Bound.
 
 ## Must-remember formulas
-- Amortized cost (potential): ĉi = ci + Φ(Di) - Φ(Di-1)
+- Amortized cost (potential): amortized_cost_i = actual_cost_i + Φ(Di) - Φ(Di-1)
 - Aggregate counter cost: T(n) < 2n
 - Counter amortized increment: O(1)
 - Stack total cost: O(n) for n operations
