@@ -1,6 +1,6 @@
 # Machine Learning – Supervised Learning: Regression
 
-> Source: ENDSEM ML.docx supplied by the user. Answer text is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
+> Source: ENDSEM ML.docx supplied by the user. Answer text is transferred from the source in its original question order. Text and tables are retained where extractable. The key visual explanations from the source are restored as SVG diagrams in the Images folder; these are clean, readable redrawings of the source visuals.
 
 Q. Explain Bias, Variance and the Bias-Variance Trade-off with suitable examples. (4–6 Marks)
 
@@ -46,6 +46,10 @@ generalization.
          A good model maintains a balance between bias and variance, reducing overall prediction error.
 
 5. Diagram
+
+![Bias and variance illustration](Images/bias-variance.svg)
+
+![Bias-variance trade-off against model capacity](Images/bias-variance-tradeoff.svg)
 
 
 6. Example
@@ -157,6 +161,8 @@ Reduced by increasing model complexity and              Reduced by regularizatio
 improving features.                                     training data.
 
 5. Diagram
+
+![Underfitting, good fit and overfitting comparison](Images/underfit-goodfit-overfit.svg)
 
 
 6. Conclusion
@@ -295,6 +301,8 @@ Mathematical Representation:
 
 The equation of a simple linear regression model is:
 
+![Linear regression best-fit line](Images/linear-regression.svg)
+
 
 Where:
 
@@ -403,6 +411,10 @@ Where:
         b = Slope of the regression line.
 
 3. Derivation Using Least Square Method
+
+![Least-squares derivation and normal equations](Images/least-squares-derivation.svg)
+
+![Final slope, intercept and regression equation](Images/least-squares-formulas.svg)
 
 
 To find the best-fit line, we minimize SSE with respect to a and b.
@@ -1193,6 +1205,8 @@ New Weight = Old Weight − (Learning Rate × Gradient)
 
 New Bias = Old Bias − (Learning Rate × Gradient with respect to Bias)
 
+
+![Gradient descent moves parameters toward the minimum cost](Images/gradient-descent.svg)
 
 5. Suitable Example
 
