@@ -4,6 +4,7 @@
 **Course:** Fourth Year Computer Engineering – SPPU, 2019 Course
 
 ## Unit Resources
+- [Complete Exam Answers](Complete-Answers.md)
 - [Supplementary Syllabus Answers](Supplementary-Syllabus-Answers.md)
 - [Quick Revision](Quick-Revision.md)
 - [Question Bank](Question-Bank.md)
