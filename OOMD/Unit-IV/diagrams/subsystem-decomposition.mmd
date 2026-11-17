@@ -1,0 +1,6 @@
+flowchart TB
+ S[Software System] --> P[Patient Management]
+ S --> B[Billing Subsystem]
+ S --> PH[Pharmacy Subsystem]
+ P <-->|Interfaces| B
+ B <-->|Interfaces| PH
