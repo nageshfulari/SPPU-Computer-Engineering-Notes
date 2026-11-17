@@ -1,6 +1,6 @@
 # Machine Learning – Supervised Learning: Regression
 
-> Source: ENDSEM ML.docx supplied by the user. The answer text below is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
+> Source: ENDSEM ML.docx supplied by the user. Answer text is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
 
 Q. Explain Bias, Variance and the Bias-Variance Trade-off with suitable examples. (4–6 Marks)
 
