@@ -77,7 +77,7 @@ stateDiagram-v2
 ### Example
 ```mermaid
 flowchart LR
-    Customer@{ shape: actor, label: "Customer" }
+    Customer@{ shape: person, label: "Customer" }
     Withdraw([Withdraw Cash])
     Validate([Validate PIN])
     Print([Print Receipt])
@@ -104,9 +104,9 @@ flowchart LR
 ### Use Case Diagram
 ```mermaid
 flowchart LR
-    Customer@{ shape: actor, label: "Customer" }
-    Bank@{ shape: actor, label: "Bank Server" }
-    Staff@{ shape: actor, label: "Maintenance Staff" }
+    Customer@{ shape: person, label: "Customer" }
+    Bank@{ shape: person, label: "Bank Server" }
+    Staff@{ shape: person, label: "Maintenance Staff" }
 
     subgraph ATM["ATM System"]
         Withdraw([Withdraw Cash])
@@ -177,9 +177,9 @@ flowchart LR
 ### Use Case Diagram
 ```mermaid
 flowchart LR
-    Customer@{ shape: actor, label: "Customer" }
-    Admin@{ shape: actor, label: "Administrator" }
-    Gateway@{ shape: actor, label: "Payment Gateway" }
+    Customer@{ shape: person, label: "Customer" }
+    Admin@{ shape: person, label: "Administrator" }
+    Gateway@{ shape: person, label: "Payment Gateway" }
 
     subgraph Reservation["Online Reservation System"]
         Login([Register / Login])
