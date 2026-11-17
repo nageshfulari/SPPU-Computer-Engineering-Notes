@@ -807,3 +807,122 @@ Examples:
 
 ### Conclusion
 Greedy complexity is mainly determined by sorting, selection and feasibility checks. Dynamic programming complexity is determined by the number of states and the work required to compute each state.
+
+---
+
+## 13. Case Study: Rail Tracks Connecting All the Cities Using Greedy Method
+
+- **Q. Explain the case study of connecting all the cities using rail tracks. How can a Greedy algorithm be used to find the minimum cost of connecting all cities?**
+
+### Introduction
+Consider a railway department that wants to connect a number of cities by laying railway tracks. The cost of laying a track between two cities may differ because of distance, land conditions and construction requirements.
+
+The objective is to connect every city so that:
+1. Every city is reachable from every other city.
+2. The total construction cost is minimum.
+3. Unnecessary track connections and cycles are avoided.
+
+This problem can be represented using a **weighted, undirected graph**:
+- Each city is represented by a vertex.
+- A possible railway track between two cities is represented by an edge.
+- The construction cost of that track is the edge weight.
+
+The required solution is a **Minimum Spanning Tree (MST)**. This is the standard graph interpretation of the stated case study: a minimum-cost set of tracks that connects all cities.
+
+### Greedy approach — Kruskal's algorithm
+Kruskal's algorithm selects railway connections in increasing order of construction cost. An edge is selected only if it does not form a cycle with the already selected edges.
+
+### Algorithm
+
+```text
+Kruskal(G)
+{
+    MST = empty set
+
+    sort all edges in increasing order of weight
+
+    for each vertex v
+        make a separate set containing v
+
+    for each edge (u, v) in sorted order
+    {
+        if Find(u) != Find(v)
+        {
+            add (u, v) to MST
+            Union(u, v)
+        }
+
+        if MST contains V - 1 edges
+            break
+    }
+
+    return MST
+}
+```
+
+Here, Find checks whether two cities are already connected, and Union combines their sets. These operations help avoid cycles.
+
+### Example
+Suppose five cities A, B, C, D and E are to be connected. The possible railway tracks and their construction costs are:
+
+| Track | Construction cost |
+|---|---:|
+| A-B | 4 |
+| A-C | 2 |
+| B-C | 1 |
+| B-D | 5 |
+| C-D | 8 |
+| C-E | 10 |
+| D-E | 2 |
+| B-E | 6 |
+
+**Step 1: Sort the tracks in increasing order of cost.**
+
+B-C (1), A-C (2), D-E (2), A-B (4), B-D (5), B-E (6), C-D (8), C-E (10).
+
+**Step 2: Select tracks without forming a cycle.**
+
+| Track considered | Cost | Decision | Reason |
+|---|---:|---|---|
+| B-C | 1 | Select | Connects two separate components |
+| A-C | 2 | Select | Connects city A to the existing component |
+| D-E | 2 | Select | Connects two separate cities |
+| A-B | 4 | Reject | Forms a cycle among A, B and C |
+| B-D | 5 | Select | Connects the two remaining components |
+| B-E | 6 | Stop / not needed | All cities are already connected |
+
+**Step 3: Final minimum spanning tree.**
+
+Selected tracks: B-C, A-C, D-E and B-D.
+
+Total minimum construction cost:
+
+= 1 + 2 + 2 + 5
+
+= **10 cost units**
+
+All five cities are connected using four tracks. A spanning tree with V cities always contains V - 1 edges.
+
+### Result
+The railway department should construct the tracks B-C, A-C, D-E and B-D. This connects all five cities with minimum total cost of **10 cost units**.
+
+### Time and space complexity
+Let V be the number of cities and E be the number of possible railway connections.
+
+- Sorting all edges: O(E log E).
+- Disjoint-set Find/Union operations: nearly O(1) amortized per operation with path compression and union by rank.
+- Overall time complexity: O(E log E).
+- Space complexity: O(V) for the disjoint-set structure, excluding the graph and edge list; storing the graph requires O(V + E).
+
+### Other Greedy method
+Prim's algorithm can also find a minimum spanning tree. It starts from any one city and repeatedly adds the minimum-cost edge that connects a city already in the tree to a city outside it.
+
+### Applications
+- Connecting cities through railway tracks.
+- Designing road and highway networks.
+- Connecting computers in a communication network.
+- Laying minimum-cost electrical or telephone cables.
+
+### Conclusion
+The rail-track case study can be modelled as a Minimum Spanning Tree problem. Kruskal's greedy algorithm selects the lowest-cost connections without creating cycles and connects all cities with minimum total construction cost.
+
