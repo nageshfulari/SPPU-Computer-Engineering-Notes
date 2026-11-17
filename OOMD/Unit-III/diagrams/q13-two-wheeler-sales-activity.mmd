@@ -1,0 +1,22 @@
+flowchart TD
+    A((Start)) --> B[Customer visits dealer]
+    B --> C[Enquire about models]
+    C --> D[Assign salesperson]
+    D --> E[Show available vehicles]
+    E --> F[Customer selects model]
+    F --> G{Accessories required?}
+    G -- Yes --> H[Select accessories]
+    G -- No --> I[Prepare quotation]
+    H --> I
+    I --> J[Customer reviews quotation]
+    J --> K{Customer wants to buy?}
+    K -- No --> Z((End enquiry))
+    K -- Yes --> L[Check vehicle stock]
+    L --> M{Vehicle available?}
+    M -- No --> N[Inform customer or offer alternative]
+    N --> Z
+    M -- Yes --> O[Complete payment]
+    O --> P[Generate invoice]
+    P --> Q[Complete registration formalities]
+    Q --> R[Deliver vehicle]
+    R --> S((End))
