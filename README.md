@@ -11,6 +11,15 @@ Subject-wise notes, previous-year question banks, diagrams, and exam-oriented an
 - [Unit V – Ethereum Platform using Solidity](Blockchain-Technology/Unit-V/README.md)
 - [Unit VI – Blockchain Case Studies](Blockchain-Technology/Unit-VI/README.md)
 
+## Object Oriented Modeling and Design (410244-D)
+
+- [Subject overview](OOMD/README.md)
+- [Unit III – Advanced State Modeling and Interaction Modeling](OOMD/Unit-III/README.md)
+- [Unit III – Complete Answers](OOMD/Unit-III/Complete-Answers.md)
+- [Unit III – Quick Revision](OOMD/Unit-III/Quick-Revision.md)
+- [Unit III – Question Bank](OOMD/Unit-III/Question-Bank.md)
+- [Unit III – PYQ Frequency Analysis](OOMD/Unit-III/PYQ-Frequency-Analysis.md)
+
 ## Study and contribution conventions
 
 - Answers are written in clear, technically accurate English and sized according to the marks.
