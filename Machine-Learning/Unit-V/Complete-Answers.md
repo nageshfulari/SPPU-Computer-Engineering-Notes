@@ -1,207 +1,6 @@
 # Machine Learning – Unsupervised Learning
 
-> Source: ENDSEM ML.docx supplied by the user. The answer text below is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
-
-Q. What is K-Fold Cross-Validation? Explain its working and discuss the effect of choosing a very large or very small
-value of K. (9 Marks)
-
-1. Introduction
-
-K-Fold Cross-Validation is a model evaluation technique used in Machine Learning to estimate how well a model
-performs on unseen data.
-
-In this technique, the dataset is divided into K equal or nearly equal parts called folds. The model is trained and
-tested K times using different folds.
-
-
-2. Working of K-Fold Cross-Validation
-
-The working process is as follows:
-
-    1. Divide the Dataset: Divide the complete dataset into K equal or nearly equal folds.
-
-    2. Select Training and Testing Data: In the first iteration, use one fold for testing and the remaining K-1 folds for
-       training.
-
-    3. Train the Model: Train the model using the training folds.
-
-    4. Evaluate the Model: Test the trained model using the selected testing fold.
-
-    5. Repeat the Process: Repeat the process K times, selecting a different fold for testing each time.
-
-    6. Calculate Average Performance: Calculate the average of all K evaluation scores to obtain the final
-       performance.
-
-3. Diagram of 5-Fold Cross-Validation
-
-Consider a dataset divided into five folds.
-
-
-Each fold is used exactly once for testing and K-1 times for training.
-
-4. Example
-
-Suppose a dataset contains 1000 records and we choose K = 5.
-
-       Total records = 1000
-
-       Number of folds = 5
-
-       Records in each fold = 1000 / 5 = 200
-
-Iteration
-
-Training Records
-
-Testing Records
-
-
-Average Accuracy:
-
-= (85 + 90 + 88 + 87 + 90) / 5
-
-= 440 / 5
-
-= 88%
-
-Therefore, the estimated model accuracy is 88%.
-
-5. Effect of Choosing a Very Small or Very Large K
-
-The value of K affects the training time, computational cost and reliability of model evaluation.
-
-A. Very Small K (e.g., K = 2)
-
-       Each model is trained using a smaller portion of the dataset.
-
-       Training time is generally lower because fewer models are trained.
-
-       The performance estimate may have high bias because each model uses less training data.
-
-       Results may depend heavily on how the dataset is divided.
-
-B. Very Large K (e.g., K = 50 or K = N)
-
-       Each model is trained using almost the entire dataset.
-
-       Training time and computational cost increase because many models must be trained.
-
-       Each testing fold contains very few records.
-
-       Evaluation results can have high variability, especially when the dataset is small.
-
-       When K equals the total number of records (N), it is called Leave-One-Out Cross-Validation (LOOCV).
-
-6. Advantages of K-Fold Cross-Validation
-
-    1. Better Evaluation: Provides a more reliable estimate than a single train-test split in many situations.
-
-
-    2. Efficient Data Usage: Every record is used for both training and testing.
-
-    3. Model Comparison: Helps compare different machine learning algorithms.
-
-    4. Overfitting Detection: Helps identify models that do not generalize well to unseen data.
-
-    5. Hyperparameter Tuning: Helps select suitable model parameters.
-
-7. Conclusion
-
-K-Fold Cross-Validation is an effective technique for evaluating machine learning models. It uses different training and
-testing combinations and calculates average performance. A commonly used value is K = 5 or K = 10, depending on
-dataset size and computational resources.
-
-
-Q. Explain the methods used for evaluating classification models. (5 Marks)
-
-1. Introduction
-
-Classification model evaluation is the process of measuring how effectively a machine learning model predicts class
-labels.
-
-Different evaluation methods are used to check the accuracy, reliability and generalization ability of a classification
-model.
-
-2. Methods Used for Evaluating Classification Models
-
-1. Confusion Matrix
-
-A confusion matrix is a table used to compare actual class labels with predicted class labels.
-
-It consists of four values:
-
-       True Positive (TP): Correctly predicted positive cases.
-
-       True Negative (TN): Correctly predicted negative cases.
-
-       False Positive (FP): Negative cases incorrectly predicted as positive.
-
-       False Negative (FN): Positive cases incorrectly predicted as negative.
-
-2. Accuracy
-
-Accuracy measures the percentage of total predictions that are correct.
-
-Formula:
-
-Accuracy = (TP + TN) / (TP + TN + FP + FN)
-
-3. Precision
-
-Precision measures how many predicted positive cases are actually positive.
-
-Formula:
-
-Precision = TP / (TP + FP)
-
-4. Recall (Sensitivity)
-
-Recall measures how many actual positive cases are correctly identified.
-
-Formula:
-
-Recall = TP / (TP + FN)
-
-
-5. F1-Score
-
-F1-Score is the harmonic mean of Precision and Recall.
-
-Formula:
-
-F1-Score = 2 × (Precision × Recall) / (Precision + Recall)
-
-6. Specificity
-
-Specificity measures how many actual negative cases are correctly identified.
-
-Formula:
-
-Specificity = TN / (TN + FP)
-
-7. K-Fold Cross-Validation
-
-In this method, the dataset is divided into K folds. The model is trained K times, using a different fold for testing in
-each iteration. The average performance is calculated to estimate model performance on unseen data.
-
-3. Importance of Classification Model Evaluation
-
-    1. Helps measure the performance of a classification algorithm.
-
-    2. Identifies incorrect predictions and classification errors.
-
-    3. Helps compare different machine learning models.
-
-    4. Helps detect poor performance on imbalanced datasets.
-
-    5. Helps select the most suitable model for a particular application.
-
-4. Conclusion
-
-Classification evaluation methods help determine how accurately and reliably a model classifies data. Metrics such as
-Accuracy, Precision, Recall, F1-Score and Specificity, along with the Confusion Matrix and K-Fold Cross-Validation, are
-useful for evaluating classification models.
-
+> Source: ENDSEM ML.docx supplied by the user. Answer text is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
 
 Q. What is Clustering? Explain the K-Means Clustering algorithm with a suitable example and applications. (5–8
 Marks)
@@ -1738,3 +1537,342 @@ possibility of an anomaly.
 
 Isolation Forest is an efficient unsupervised anomaly detection algorithm that identifies outliers using random
 partitioning. Anomalies generally require fewer splits to isolate than normal data points.
+
+
+Q. Explain the Elbow Method for selecting the optimal number of clusters. (6 Marks)
+
+1. Introduction
+
+The Elbow Method is a technique used in clustering to determine the optimal number of clusters (K).
+
+It helps select a suitable K value by measuring how the clustering cost changes when the number of clusters
+increases.
+
+It is commonly used with K-Means and can also be applied to K-Medoids using an appropriate clustering cost.
+
+2. Principle of Elbow Method
+
+
+The Elbow Method is based on the concept of Within-Cluster Sum of Squares (WCSS).
+
+WCSS measures the sum of squared distances between each data point and its assigned cluster centroid.
+
+Formula:
+
+WCSS = Sum of (Distance between data point and its cluster centroid)²
+
+       When K increases, WCSS generally decreases.
+
+       Initially, increasing K significantly improves clustering.
+
+       After a certain point, the reduction in WCSS becomes smaller.
+
+       This point is called the Elbow Point and is selected as the optimal K.
+
+3. Working of Elbow Method
+
+    1. Select K Values: Choose different values of K, such as 1, 2, 3, 4, 5 and 6.
+
+    2. Apply Clustering: Run the K-Means algorithm for each K value.
+
+    3. Calculate WCSS: Calculate the within-cluster sum of squares for every K.
+
+    4. Plot the Graph: Plot K values on the X-axis and WCSS values on the Y-axis.
+
+    5. Identify Elbow Point: Find the point where the WCSS reduction starts slowing down.
+
+    6. Select Optimal K: Choose the K value corresponding to the elbow point.
+
+4. Diagram of Elbow Method
+
+Elbow Method Graph
+
+
+5. Numerical Example
+
+Suppose the following WCSS values are obtained by applying K-Means for different K values:
+
+Number of Clusters (K) WCSS
+
+1                        500
+
+2                        250
+
+3                        120
+
+
+4                         100
+
+5                         90
+
+6                         85
+
+Observation:
+
+       From K = 1 to K = 3, WCSS decreases significantly.
+
+       After K = 3, the reduction in WCSS becomes smaller.
+
+       Therefore, the elbow point occurs approximately at K = 3.
+
+Optimal K = 3
+
+6. Advantages of Elbow Method
+
+    1. Simple and easy to understand.
+
+    2. Helps select the optimal number of clusters.
+
+    3. Reduces unnecessary cluster formation.
+
+    4. Easy to implement and interpret.
+
+    5. Useful for K-Means clustering.
+
+7. Limitations
+
+    1. The elbow point may not always be clearly visible.
+
+    2. Results may depend on the dataset.
+
+    3. It does not always provide a unique optimal K.
+
+    4. It may be less effective for datasets having complex cluster structures.
+
+8. Conclusion
+
+The Elbow Method is a popular technique for selecting the optimal number of clusters. It uses WCSS values and
+identifies the point where adding more clusters provides only a small improvement in clustering performance.
+
+
+Q. Explain Intrinsic and Extrinsic methods for measuring clustering quality. (6 Marks)
+
+1. Introduction
+
+Clustering evaluation is the process of measuring how effectively a clustering algorithm groups similar data points
+together.
+
+There are two main methods for evaluating clustering quality:
+
+    1. Intrinsic Evaluation
+
+    2. Extrinsic Evaluation
+
+2. Intrinsic Evaluation
+
+Intrinsic Evaluation measures the quality of clusters using only the dataset and the clustering results, without
+requiring actual class labels.
+
+
+It evaluates how compact and well-separated the clusters are.
+
+Important Intrinsic Evaluation Measures:
+
+1. Silhouette Score
+
+        Measures how similar a data point is to its own cluster compared to other clusters.
+
+        Its value ranges from -1 to +1.
+
+        A value closer to +1 indicates better clustering.
+
+Formula:
+
+S = (b - a) / max(a, b)
+
+Where:
+
+        a = Average distance within the same cluster.
+
+        b = Average distance to the nearest other cluster.
+
+2. Davies-Bouldin Index
+
+        Measures the average similarity between each cluster and its most similar cluster.
+
+        A lower Davies-Bouldin Index indicates better clustering.
+
+3. Within-Cluster Sum of Squares (WCSS)
+
+        Measures the sum of squared distances between data points and their cluster centroids.
+
+        A lower WCSS indicates more compact clusters, although it generally decreases as the number of clusters
+         increases.
+
+3. Extrinsic Evaluation
+
+Extrinsic Evaluation measures clustering quality by comparing the generated clusters with known actual class labels
+or ground-truth labels.
+
+It evaluates how closely the predicted clusters match the expected grouping.
+
+Important Extrinsic Evaluation Measures:
+
+1. Adjusted Rand Index (ARI)
+
+        Measures the similarity between the predicted clusters and actual class labels.
+
+        Adjusts the Rand Index for agreement expected by chance.
+
+        Its value ranges from -1 to +1.
+
+        A value closer to +1 indicates better agreement.
+
+2. Normalized Mutual Information (NMI)
+
+        Measures the amount of shared information between predicted clusters and actual class labels.
+
+        Its value generally ranges from 0 to 1.
+
+        A value closer to 1 indicates better clustering agreement.
+
+3. Purity Score
+
+        Measures the percentage of data points assigned to the most common actual class within each cluster.
+
+        Higher purity indicates better agreement with the actual labels.
+
+
+4. Difference Between Intrinsic and Extrinsic Evaluation
+
+Intrinsic Evaluation                                             Extrinsic Evaluation
+
+1. Does not require actual class labels.                         1. Requires actual class labels.
+
+                                                                 2. Compares clustering results with ground-truth
+2. Uses only the dataset and clustering results.
+                                                                 labels.
+
+3. Measures cluster compactness and separation.                  3. Measures agreement with expected class groupings.
+
+4. Useful when labelled data is unavailable.                     4. Useful when labelled data is available.
+
+5. Examples: Silhouette Score, Davies-Bouldin Index and
+                                                                 5. Examples: ARI, NMI and Purity Score.
+WCSS.
+
+5. Suitable Example
+
+Consider a customer segmentation dataset.
+
+Intrinsic Evaluation:
+
+A company groups customers into three clusters based on income and spending behaviour.
+
+       Silhouette Score is calculated to measure cluster separation.
+
+       No actual customer category labels are required.
+
+Extrinsic Evaluation:
+
+Suppose the actual customer categories are already known.
+
+       Compare the generated clusters with the actual customer categories.
+
+       Use ARI or NMI to measure the agreement.
+
+6. Conclusion
+
+Intrinsic and Extrinsic Evaluation methods are used to measure clustering quality from different perspectives. Intrinsic
+evaluation measures cluster compactness and separation without actual labels, whereas extrinsic evaluation
+compares the generated clusters with known class labels.
+
+
+Q. Explain the issue of Optimization of Clusters in clustering algorithms. (6 Marks)
+
+1. Introduction
+
+Cluster Optimization is the process of finding the best possible grouping of data points into clusters so that similar
+data points are grouped together and dissimilar data points are separated.
+
+The main objective is to improve cluster quality by achieving:
+
+       High similarity within the same cluster (high cohesion).
+
+       Low similarity between different clusters (high separation).
+
+2. Issues in Cluster Optimization
+
+1. Selection of Optimal Number of Clusters (K)
+
+       Selecting the correct number of clusters is difficult.
+
+
+       A small K may combine different groups, whereas a large K may create unnecessary clusters.
+
+       Methods such as the Elbow Method and Silhouette Score help select K.
+
+2. Initial Centroid Selection
+
+       In K-Means, initial centroids are selected before clustering.
+
+       Poor centroid selection may produce inaccurate clusters.
+
+       K-Means++ helps select better initial centroids.
+
+3. Local Optimum Problem
+
+       Clustering algorithms may converge to a local optimum instead of the global optimum.
+
+       Different initializations may produce different clustering results.
+
+4. Handling Outliers and Noise
+
+       Outliers can affect centroid positions and cluster formation.
+
+       Techniques such as DBSCAN and Isolation Forest help identify noise and anomalies.
+
+5. Cluster Shape and Size
+
+       Some algorithms work best with spherical clusters.
+
+       Real-world datasets may contain irregularly shaped clusters or clusters of different sizes and densities.
+
+6. High-Dimensional Data
+
+       As the number of features increases, distance calculations may become less meaningful.
+
+       Dimensionality reduction techniques such as PCA can help reduce unnecessary features.
+
+7. Computational Complexity
+
+       Clustering large datasets requires significant processing time and memory.
+
+       Efficient algorithms and sampling techniques can reduce computational cost.
+
+3. Techniques Used for Cluster Optimization
+
+Technique               Purpose
+
+Elbow Method            Finds a suitable number of clusters using clustering cost.
+
+Silhouette Score        Measures cluster cohesion and separation.
+
+K-Means++               Improves initial centroid selection.
+
+PCA                     Reduces the number of dimensions.
+
+DBSCAN                  Identifies dense clusters and noise points.
+
+Multiple Initializations Reduces the risk of poor local solutions.
+
+4. Example
+
+Consider a company that wants to divide its customers into different groups based on income and spending
+behaviour.
+
+       If K = 2, customers with different purchasing behaviours may be grouped together.
+
+       If K = 10, too many unnecessary clusters may be created.
+
+
+       By applying the Elbow Method and Silhouette Score, the company can select a more suitable number of
+        clusters.
+
+This improves the quality and usefulness of customer segmentation.
+
+5. Conclusion
+
+Cluster Optimization aims to find meaningful and accurate clusters by improving cluster cohesion and separation.
+Issues such as selecting K, initialization, outliers, cluster shape and computational complexity must be considered to
+obtain better clustering results.
