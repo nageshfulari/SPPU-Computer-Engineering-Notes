@@ -1,0 +1,36 @@
+classDiagram
+direction TB
+
+class PaymentStrategy {
+  <<interface>>
+  +pay(amount)
+}
+
+class CreditCardPayment {
+  +pay(amount)
+}
+
+class UPIPayment {
+  +pay(amount)
+}
+
+class NetBankingPayment {
+  +pay(amount)
+}
+
+class PaymentContext {
+  -strategy PaymentStrategy
+  +setStrategy(strategy)
+  +executePayment(amount)
+}
+
+class Customer {
+  +selectPaymentMethod()
+  +makePayment(amount)
+}
+
+PaymentStrategy <|.. CreditCardPayment
+PaymentStrategy <|.. UPIPayment
+PaymentStrategy <|.. NetBankingPayment
+PaymentContext o--> PaymentStrategy : maintains
+Customer --> PaymentContext : selects strategy
