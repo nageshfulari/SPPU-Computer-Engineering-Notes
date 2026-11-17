@@ -1,7 +1,7 @@
 flowchart LR
-    Customer["🧍 Customer"]
-    Bank["🏦 Bank Server"]
-    Staff["🧍 Maintenance Staff"]
+    Customer@{ shape: actor, label: "Customer" }
+    Bank@{ shape: actor, label: "Bank Server" }
+    Staff@{ shape: actor, label: "Maintenance Staff" }
 
     subgraph ATM["ATM System"]
         Withdraw([Withdraw Cash])
@@ -34,6 +34,3 @@ flowchart LR
     Deposit -. "<<include>>" .-> Validate
     Deposit -. "<<include>>" .-> Update
     ChangePIN -. "<<include>>" .-> Verify
-
-    classDef actor fill:#fff,stroke:#333,stroke-width:1.5px
-    class Customer,Bank,Staff actor
