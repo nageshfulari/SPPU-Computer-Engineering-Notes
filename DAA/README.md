@@ -15,6 +15,14 @@ This directory contains unit-wise, exam-oriented DAA notes prepared using the su
 - [Question Bank](Unit-III/Question-Bank.md)
 - [PYQ Frequency Analysis](Unit-III/PYQ-Frequency-Analysis.md)
 
+## Unit IV — Backtracking and Branch-and-Bound
+
+- [Unit overview and syllabus coverage](Unit-IV/README.md)
+- [Complete Answers](Unit-IV/Complete-Answers.md)
+- [Quick Revision](Unit-IV/Quick-Revision.md)
+- [Question Bank](Unit-IV/Question-Bank.md)
+- [PYQ Frequency Analysis](Unit-IV/PYQ-Frequency-Analysis.md)
+
 ## Preparation conventions
 
 - Answers follow the SPPU exam-oriented structure and are sized according to the marks.
@@ -25,4 +33,4 @@ This directory contains unit-wise, exam-oriented DAA notes prepared using the su
 
 ## Scope note
 
-Unit III is being added first. Units I, II, IV, V and VI will be added separately after their respective content is organized and checked.
+Units III and IV have been organized. Units I, II, V and VI will be added separately after their respective content is organized and checked.
