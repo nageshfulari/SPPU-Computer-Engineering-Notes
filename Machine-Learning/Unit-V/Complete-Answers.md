@@ -57,6 +57,10 @@ reaches the maximum number of iterations.
 
 4. Flowchart of K-Means Algorithm
 
+![K-Means clustering illustration](Images/kmeans-clustering.svg)
+
+
+
 
 5. Suitable Example
 
@@ -327,6 +331,10 @@ The working steps are:
 
 3. Flowchart of K-Medoids Algorithm
 
+![K-Medoids algorithm flowchart](Images/kmedoids-flowchart.svg)
+
+
+
 
 4. Why is K-Medoids Used?
 
@@ -383,6 +391,10 @@ The optimal K provides meaningful and well-separated clusters.
 2. Methods for Selecting the Optimal Number of Clusters
 
 1. Elbow Method
+
+![Elbow method for selecting K](Images/elbow-method.svg)
+
+
 
 The Elbow Method is commonly used with K-Means and can also be applied to K-Medoids.
 
@@ -571,6 +583,10 @@ Finally, all points form one cluster:
 Thus, the algorithm builds a hierarchy of clusters.
 
 4. Dendrogram
+
+![Hierarchical clustering dendrogram](Images/hierarchical-dendrogram.svg)
+
+
 
 A Dendrogram is a tree-like diagram used to represent the merging or splitting process in Hierarchical Clustering.
 
@@ -764,6 +780,10 @@ The working process is as follows:
          Noise Point: Does not belong to any cluster.
 
 Simple Density-Based Clustering Diagram:
+
+![DBSCAN core, border and noise points](Images/dbscan-core-border-noise.svg)
+
+
 
 
 Legend:
@@ -1028,6 +1048,10 @@ Apply K-Means to the selected eigenvector representation to obtain the final clu
 
 4. Example
 
+![K-Means compared with Spectral Clustering on non-linear clusters](Images/spectral-vs-kmeans.svg)
+
+
+
 Consider a dataset containing two circular groups of data points.
 
        K-Means may struggle to separate the two groups because it generally works best with compact,
@@ -1128,6 +1152,10 @@ The algorithm works in the following steps:
     6. Generate Final Clusters: Separate the graph into different clusters based on connection strength.
 
 4. Suitable Example
+
+![Graph-based clustering into connected groups](Images/graph-based-clustering.svg)
+
+
 
 Consider a social network containing six users: A, B, C, D, E and F.
 
@@ -1385,6 +1413,10 @@ LOF compares the local density of this customer's transaction with neighbouring 
 
 Simple Diagram:
 
+![Local Outlier Factor compares local neighbourhood density](Images/lof-outlier.svg)
+
+
+
 
 5. Advantages of LOF
 
@@ -1464,6 +1496,10 @@ The algorithm works in the following steps:
     8. Identify Outliers: Points requiring fewer splits are more likely to be anomalies.
 
 3. Flowchart of Isolation Forest
+
+![Isolation-based outlier detection](Images/isolation-forest.svg)
+
+
 
 
 4. Suitable Example
