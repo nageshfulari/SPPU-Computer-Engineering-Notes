@@ -36,9 +36,9 @@
 
 ## Coverage status
 
-The generated-answer collection currently includes greedy principle/control abstraction, fractional knapsack, job sequencing, activity selection, dynamic programming principle/control abstraction, binomial coefficients, OBST, 0/1 knapsack using DP, matrix-chain multiplication, optimal substructure, and Greedy vs DP comparison.
+The generated-answer collection includes greedy principle/control abstraction, fractional knapsack, job sequencing, activity selection, dynamic programming principle/control abstraction, binomial coefficients, OBST, 0/1 knapsack using DP, matrix-chain multiplication, optimal substructure, Greedy vs DP comparison, and the rail-track network-design case study.
 
-**Pending explicit syllabus treatment:** The exemplar “Rail tracks connecting all the cities” has not been located in the generated-answer collection reviewed for this compilation. It is listed in the syllabus and should be prepared separately after confirming the exact case-study interpretation expected in the course material.
+**Case-study interpretation:** The supplied syllabus names “Rail tracks connecting all the cities” but does not specify an algorithm in the excerpt. The answer treats it as the standard minimum-cost network connection problem (Minimum Spanning Tree) and explains Kruskal's greedy algorithm, with Prim's algorithm noted as an alternative.
 
 ## Answer-writing conventions
 
