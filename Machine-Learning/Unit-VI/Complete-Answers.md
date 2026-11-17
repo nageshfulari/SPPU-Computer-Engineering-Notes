@@ -47,6 +47,10 @@ An ANN generally consists of three main layers:
 
 3. ANN Architecture Diagram
 
+![Artificial Neural Network architecture](Images/ann-architecture.svg)
+
+
+
 
 The connections between neurons carry information through the network.
 
@@ -187,6 +191,10 @@ corresponding weights, adds a bias and applies an activation function to produce
 
 4. Architecture of Perceptron
 
+![Perceptron architecture and weighted-sum processing](Images/perceptron-architecture.svg)
+
+
+
 A perceptron consists of the following components:
 
     1. Input: Receives input values such as X1, X2 and X3.
@@ -316,6 +324,10 @@ Step 6: Repeat the Process
        Continue until the error becomes sufficiently small or the maximum number of training iterations is reached.
 
 3. Backpropagation Flowchart
+
+![Backpropagation training flowchart](Images/backpropagation-flow.svg)
+
+
 
 
 4. Characteristics of Backpropagation
@@ -555,6 +567,10 @@ Where:
 
 2. Different Activation Functions
 
+![Common activation function shapes](Images/activation-functions.svg)
+
+
+
 1. Binary Step Function
 
         Produces either 0 or 1 depending on a threshold.
@@ -736,6 +752,10 @@ An RBF network generally consists of three layers:
 
 The architecture of an RBF network is shown below:
 
+![Radial Basis Function Network architecture](Images/rbf-network.svg)
+
+
+
 
 Working of each layer:
 
@@ -895,6 +915,10 @@ The architecture of FLANN consists of three main components:
 
 Block Diagram:
 
+![Functional Link ANN architecture](Images/flann-architecture.svg)
+
+
+
 
 3. Building Blocks of FLANN
 
@@ -1008,6 +1032,10 @@ An RNN consists of three main components:
     3. Output Layer: Produces the output based on the hidden state.
 
 Simple RNN Architecture:
+
+![Recurrent Neural Network sequence architecture](Images/rnn-architecture.svg)
+
+
 
 
 The hidden state carries information from one time step to the next.
@@ -1133,6 +1161,10 @@ A CNN generally consists of the following layers:
     7. Output Layer
 
 CNN Architecture Diagram:
+
+![Convolutional Neural Network architecture](Images/cnn-architecture.svg)
+
+
 
 
 3. Components of CNN
@@ -1379,6 +1411,10 @@ borders of an input image before applying a convolution operation.
 It is used to control the output feature map size and preserve information near the image boundaries.
 
 2. Types of Padding in CNN
+
+![Valid and same padding in CNN](Images/cnn-padding.svg)
+
+
 
 There are mainly two commonly used types of padding:
 
