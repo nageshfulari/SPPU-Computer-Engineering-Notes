@@ -1,0 +1,23 @@
+classDiagram
+    class BankAccount {
+        accountNumber
+        balance
+        deposit()
+        withdraw()
+    }
+    class SavingsAccount {
+        interestRate
+        calculateInterest()
+    }
+    class CurrentAccount {
+        overdraftLimit
+        checkOverdraft()
+    }
+    class Customer {
+        customerId
+        name
+        address
+    }
+    BankAccount <|-- SavingsAccount
+    BankAccount <|-- CurrentAccount
+    Customer "1" --> "0..*" BankAccount : owns
