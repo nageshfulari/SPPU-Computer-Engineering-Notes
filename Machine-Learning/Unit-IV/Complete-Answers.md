@@ -26,6 +26,10 @@ optimal hyperplane.
 
 3. Suitable Diagram
 
+![SVM maximum-margin hyperplane and support vectors](Images/svm-hyperplane.svg)
+
+
+
 Support Vector Machine (SVM) in Python
 
 reneshbedre.com
@@ -286,6 +290,10 @@ penalizes only those prediction errors that fall outside this tube.
       6. Prediction: Use the trained model to predict continuous values for new input data.
 
 4. Suitable Diagram
+
+![SVR regression line with epsilon tube](Images/svr-epsilon-tube.svg)
+
+
 
 
 Diagram explanation:
@@ -781,6 +789,10 @@ Diagram explanation:
 
 7. Conclusion
 
+![Bagging trains models in parallel; boosting trains learners sequentially](Images/bagging-boosting.svg)
+
+
+
 Ensemble Learning combines multiple machine learning models to improve prediction performance. Bagging trains
 models independently and mainly reduces variance, whereas Boosting trains models sequentially and focuses on
 correcting previous errors.
@@ -827,6 +839,10 @@ The final prediction is obtained by combining the predictions of all decision tr
     7. Final Output: Return the combined prediction.
 
 3. Suitable Diagram
+
+![Random Forest combines multiple decision trees](Images/random-forest.svg)
+
+
 
 
 Diagram Explanation:
@@ -944,6 +960,14 @@ A weak learner is a model that performs slightly better than random guessing.
        prediction.
 
 3. Suitable Diagram
+
+![AdaBoost sequentially trains weighted weak learners](Images/adaboost.svg)
+
+
+
+![AdaBoost sequentially trains weighted weak learners](Images/adaboost.svg)
+
+
 
 Gradient Boosting
 
@@ -1516,6 +1540,10 @@ metrics such as Accuracy, Precision, Recall and F1-Score.
 
 2. Confusion Matrix for Binary Classification
 
+![Confusion matrix showing TP, TN, FP and FN](Images/confusion-matrix.svg)
+
+
+
 A confusion matrix for binary classification contains four values:
 
 Actual / Predicted Predicted Positive Predicted Negative
@@ -2080,6 +2108,10 @@ The working process is as follows:
        performance.
 
 3. Diagram of 5-Fold Cross-Validation
+
+![Five-fold cross-validation: each fold is held out once](Images/kfold-cross-validation.svg)
+
+
 
 Consider a dataset divided into five folds.
 
