@@ -1,0 +1,35 @@
+flowchart LR
+    Customer["🧍 Customer"]
+    Admin["🧍 Administrator"]
+    Gateway["💳 Payment Gateway"]
+
+    subgraph Reservation["Online Reservation System"]
+        Login([Register / Login])
+        Search([Search Availability])
+        Details([View Details])
+        Make([Make Reservation])
+        Enter([Enter Details])
+        Pay([Process Payment])
+        Confirm([Confirm Reservation])
+        View([View Reservation])
+        Cancel([Cancel Reservation])
+        Availability([Manage Availability])
+        Manage([Manage Reservations])
+    end
+
+    Customer --- Login
+    Customer --- Search
+    Customer --- Details
+    Customer --- Make
+    Customer --- View
+    Customer --- Cancel
+    Admin --- Availability
+    Admin --- Manage
+    Gateway --- Pay
+
+    Make -. "<<include>>" .-> Enter
+    Make -. "<<include>>" .-> Pay
+    Make -. "after successful payment" .-> Confirm
+
+    classDef actor fill:#fff,stroke:#333,stroke-width:1.5px
+    class Customer,Admin,Gateway actor
