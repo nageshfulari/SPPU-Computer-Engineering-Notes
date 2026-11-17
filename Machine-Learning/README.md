@@ -42,3 +42,7 @@ The official SPPU syllabus is the primary boundary. PYQ frequency and marks are 
 ## Unit V — Unsupervised Learning
 
 [Unit V README](Unit-V/README.md) · [Complete Answers](Unit-V/Complete-Answers.md) · [Question Bank](Unit-V/Question-Bank.md) · [Quick Revision](Unit-V/Quick-Revision.md) · [PYQ Frequency Analysis](Unit-V/PYQ-Frequency-Analysis.md)
+
+## Unit VI — Introduction to Neural Networks
+
+[Unit VI README](Unit-VI/README.md) · [Complete Answers](Unit-VI/Complete-Answers.md) · [Question Bank](Unit-VI/Question-Bank.md) · [Quick Revision](Unit-VI/Quick-Revision.md) · [PYQ Frequency Analysis](Unit-VI/PYQ-Frequency-Analysis.md)
