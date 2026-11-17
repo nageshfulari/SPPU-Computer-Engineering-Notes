@@ -1,7 +1,7 @@
 flowchart LR
-    Customer@{ shape: actor, label: "Customer" }
-    Admin@{ shape: actor, label: "Administrator" }
-    Gateway@{ shape: actor, label: "Payment Gateway" }
+    Customer@{ shape: person, label: "Customer" }
+    Admin@{ shape: person, label: "Administrator" }
+    Gateway@{ shape: person, label: "Payment Gateway" }
 
     subgraph Reservation["Online Reservation System"]
         Login([Register / Login])
