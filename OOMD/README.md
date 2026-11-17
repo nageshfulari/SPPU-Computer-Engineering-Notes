@@ -25,3 +25,11 @@
   - [PYQ Frequency and Syllabus Coverage Analysis](Unit-V/PYQ-Frequency-Analysis.md)
   - [Editable Diagram Sources](Unit-V/diagrams/README.md)
 
+
+- [Unit VI – Design Pattern](Unit-VI/README.md)
+  - [Complete Exam Answers](Unit-VI/Complete-Answers.md)
+  - [Supplementary Syllabus Answers](Unit-VI/Supplementary-Syllabus-Answers.md)
+  - [Quick Revision](Unit-VI/Quick-Revision.md)
+  - [Question Bank](Unit-VI/Question-Bank.md)
+  - [PYQ and Syllabus Coverage Analysis](Unit-VI/PYQ-Frequency-Analysis.md)
+  - [Editable Diagram Sources](Unit-VI/diagrams/README.md)
