@@ -19,6 +19,11 @@ Subject-wise notes, previous-year question banks, diagrams, and exam-oriented an
 - [Unit III – Quick Revision](OOMD/Unit-III/Quick-Revision.md)
 - [Unit III – Question Bank](OOMD/Unit-III/Question-Bank.md)
 - [Unit III – PYQ Frequency Analysis](OOMD/Unit-III/PYQ-Frequency-Analysis.md)
+- [Unit IV – User Application Analysis and System Design](OOMD/Unit-IV/README.md)
+- [Unit IV – Complete Answers](OOMD/Unit-IV/Complete-Answers.md)
+- [Unit IV – Quick Revision](OOMD/Unit-IV/Quick-Revision.md)
+- [Unit IV – Question Bank](OOMD/Unit-IV/Question-Bank.md)
+- [Unit IV – PYQ Frequency Analysis](OOMD/Unit-IV/PYQ-Frequency-Analysis.md)
 
 ## Study and contribution conventions
 
