@@ -1,7 +1,7 @@
 flowchart LR
-    Customer["🧍 Customer"]
-    Admin["🧍 Administrator"]
-    Gateway["💳 Payment Gateway"]
+    Customer@{ shape: actor, label: "Customer" }
+    Admin@{ shape: actor, label: "Administrator" }
+    Gateway@{ shape: actor, label: "Payment Gateway" }
 
     subgraph Reservation["Online Reservation System"]
         Login([Register / Login])
@@ -21,6 +21,7 @@ flowchart LR
     Customer --- Search
     Customer --- Details
     Customer --- Make
+    Customer --- Confirm
     Customer --- View
     Customer --- Cancel
     Admin --- Availability
@@ -29,7 +30,3 @@ flowchart LR
 
     Make -. "<<include>>" .-> Enter
     Make -. "<<include>>" .-> Pay
-    Make -. "after successful payment" .-> Confirm
-
-    classDef actor fill:#fff,stroke:#333,stroke-width:1.5px
-    class Customer,Admin,Gateway actor
