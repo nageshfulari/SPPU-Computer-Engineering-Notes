@@ -1,0 +1,24 @@
+flowchart TB
+ subgraph ATM["ATM Machine - Device Node"]
+  UI["ATM User Interface"]
+  CARD["Card Reader"]
+  PIN["PIN Authentication"]
+  CASH["Cash Dispenser"]
+  PR["Receipt Printer"]
+  UI --> CARD
+  UI --> PIN
+  UI --> CASH
+  UI --> PR
+ end
+ subgraph BANK["Bank Server - Device Node"]
+  APP["Banking Application"]
+  AUTH["Authentication Service"]
+  TP["Transaction Processing"]
+  APP --> AUTH
+  APP --> TP
+ end
+ subgraph DB["Database Server - Device Node"]
+  DATA[("Bank Database")]
+ end
+ ATM <-->|Network Communication| BANK
+ BANK <-->|Database Connection| DB
