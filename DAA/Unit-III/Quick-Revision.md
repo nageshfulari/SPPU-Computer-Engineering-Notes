@@ -150,3 +150,18 @@ m[i,k] + m[k+1,j] + p[i-1] × p[k] × p[j]
 4. In OBST, state clearly whether unsuccessful-search probabilities are included.
 5. In matrix-chain multiplication, matrix order cannot change; only brackets change.
 6. DP complexity should be derived from states × work per state.
+
+## 13. Rail Tracks Connecting All Cities — Minimum Spanning Tree
+
+- Model each city as a vertex and each possible railway track as a weighted edge.
+- Edge weight represents construction cost.
+- Goal: connect all cities with minimum total cost and no cycles.
+- The resulting structure is a Minimum Spanning Tree (MST).
+- Kruskal's algorithm: sort edges by increasing cost; select an edge only if it does not form a cycle.
+- Stop after selecting V - 1 edges.
+- Prim's algorithm is another greedy method for MST.
+
+**Example MST:** Select B-C (1), A-C (2), D-E (2), B-D (5). Total cost = 10.
+
+**Complexity of Kruskal:** O(E log E) time; O(V) auxiliary space for disjoint sets, excluding graph storage.
+
