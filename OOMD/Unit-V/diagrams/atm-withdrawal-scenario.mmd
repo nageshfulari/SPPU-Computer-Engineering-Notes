@@ -1,0 +1,15 @@
+flowchart TD
+    A([Start]) --> B[Insert ATM Card]
+    B --> C[Enter PIN]
+    C --> D{PIN Valid?}
+    D -- No --> E[Display Error]
+    E --> Z([End])
+    D -- Yes --> F[Select Cash Withdrawal]
+    F --> G[Enter Amount]
+    G --> H{Sufficient Balance?}
+    H -- No --> I[Display Insufficient Balance]
+    I --> Z
+    H -- Yes --> J[Approve Transaction]
+    J --> K[Dispense Cash]
+    K --> L[Update Account Balance]
+    L --> Z
