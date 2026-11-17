@@ -1,7 +1,7 @@
 flowchart LR
-    Customer@{ shape: actor, label: "Customer" }
-    Bank@{ shape: actor, label: "Bank Server" }
-    Staff@{ shape: actor, label: "Maintenance Staff" }
+    Customer@{ shape: person, label: "Customer" }
+    Bank@{ shape: person, label: "Bank Server" }
+    Staff@{ shape: person, label: "Maintenance Staff" }
 
     subgraph ATM["ATM System"]
         Withdraw([Withdraw Cash])
