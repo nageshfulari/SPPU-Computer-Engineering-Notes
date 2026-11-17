@@ -1,0 +1,27 @@
+flowchart TD
+    A((Start)) --> B[Insert card]
+    B --> C[Enter PIN]
+    C --> D[Validate PIN]
+    D --> E{PIN valid?}
+    E -- No --> F[Display error]
+    F --> G{Retry PIN?}
+    G -- Yes --> C
+    G -- No --> Z((End))
+    E -- Yes --> H[Display transaction menu]
+    H --> I{Select transaction}
+    I -- Withdraw --> J[Enter amount]
+    J --> K[Check balance and cash]
+    K --> L{Sufficient amount?}
+    L -- No --> M[Display insufficient funds]
+    M --> H
+    L -- Yes --> N[Dispense cash]
+    I -- Balance enquiry --> O[Retrieve and display balance]
+    I -- Deposit --> P[Enter deposit details]
+    P --> Q[Process deposit]
+    N --> R{Print receipt?}
+    O --> R
+    Q --> R
+    R -- Yes --> S[Print receipt]
+    R -- No --> T((End))
+    S --> T
+    Z --> T
