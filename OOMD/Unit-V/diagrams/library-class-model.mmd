@@ -1,0 +1,28 @@
+classDiagram
+    class Member {
+        memberId
+        name
+        address
+        borrowBook()
+    }
+    class Book {
+        bookId
+        title
+        author
+        searchBook()
+    }
+    class Librarian {
+        librarianId
+        name
+        issueBook()
+        returnBook()
+    }
+    class Transaction {
+        transactionId
+        issueDate
+        returnDate
+        calculateFine()
+    }
+    Member "1" --> "0..*" Transaction : makes
+    Book "1" --> "0..*" Transaction : involved in
+    Librarian "1" --> "0..*" Transaction : manages
