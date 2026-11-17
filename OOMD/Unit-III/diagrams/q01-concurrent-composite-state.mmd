@@ -1,0 +1,15 @@
+stateDiagram-v2
+    direction LR
+    [*] --> ATMActive
+    state "ATM Active" as ATMActive {
+        state "Display Region" as DisplayRegion {
+            [*] --> ShowMenu
+            ShowMenu --> UpdateScreen
+        }
+        --
+        state "Network Region" as NetworkRegion {
+            [*] --> ConnectToBank
+            ConnectToBank --> ValidateRequest
+        }
+    }
+    ATMActive --> [*]
