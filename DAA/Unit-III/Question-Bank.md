@@ -53,7 +53,7 @@ The questions below consolidate the generated-answer set and the Unit III questi
 
 | Topic | Status |
 |---|---|
-| Rail tracks connecting all the cities | Included in supplied Unit III syllabus; a dedicated generated answer was not found in the reviewed answer set |
+| Rail tracks connecting all the cities | Answer prepared as a minimum spanning tree (MST) network-design case study using Kruskal's greedy algorithm; Prim's algorithm also noted |
 | Greedy strategy | Answer prepared |
 | Fractional knapsack | Answer prepared |
 | Job sequencing | Answer prepared |
