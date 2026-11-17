@@ -1,0 +1,15 @@
+flowchart LR
+    Customer["🧍 Customer"]
+    Withdraw([Withdraw Cash])
+    Validate([Validate PIN])
+    Print([Print Receipt])
+    Savings([Savings Account])
+    Account([Account])
+
+    Customer --- Withdraw
+    Withdraw -. "<<include>>" .-> Validate
+    Print -. "<<extend>>" .-> Withdraw
+    Savings --|> Account
+
+    classDef actor fill:#fff,stroke:#333,stroke-width:1.5px
+    class Customer actor
