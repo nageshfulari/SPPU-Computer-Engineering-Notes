@@ -27,6 +27,7 @@
 
 
 - [Unit VI – Design Pattern](Unit-VI/README.md)
+  - [Complete Exam Answers](Unit-VI/Complete-Answers.md)
   - [Supplementary Syllabus Answers](Unit-VI/Supplementary-Syllabus-Answers.md)
   - [Quick Revision](Unit-VI/Quick-Revision.md)
   - [Question Bank](Unit-VI/Question-Bank.md)
