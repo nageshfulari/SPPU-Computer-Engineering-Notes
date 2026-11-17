@@ -18,4 +18,10 @@
   - [Question Bank](Unit-IV/Question-Bank.md)
   - [PYQ Frequency Analysis](Unit-IV/PYQ-Frequency-Analysis.md)
 
-Further units will be added as their preparation and verification are completed.
+- [Unit V – Class Design, Implementation Modeling and Legacy Systems](Unit-V/README.md)
+  - [Complete Exam Answers](Unit-V/Complete-Answers.md)
+  - [Quick Revision](Unit-V/Quick-Revision.md)
+  - [Question Bank](Unit-V/Question-Bank.md)
+  - [PYQ Frequency and Syllabus Coverage Analysis](Unit-V/PYQ-Frequency-Analysis.md)
+  - [Editable Diagram Sources](Unit-V/diagrams/README.md)
+
