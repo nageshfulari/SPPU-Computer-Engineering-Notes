@@ -1,5 +1,5 @@
 flowchart LR
-    Customer["🧍 Customer"]
+    Customer@{ shape: actor, label: "Customer" }
     Withdraw([Withdraw Cash])
     Validate([Validate PIN])
     Print([Print Receipt])
@@ -10,6 +10,3 @@ flowchart LR
     Withdraw -. "<<include>>" .-> Validate
     Print -. "<<extend>>" .-> Withdraw
     Savings --|> Account
-
-    classDef actor fill:#fff,stroke:#333,stroke-width:1.5px
-    class Customer actor
