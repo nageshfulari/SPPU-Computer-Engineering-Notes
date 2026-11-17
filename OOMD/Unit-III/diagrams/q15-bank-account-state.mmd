@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> Active
+    Active --> Blocked: blockAccount()
+    Blocked --> Active: unblockAccount()
+    Active --> Closed: closeAccount()
+    Blocked --> Closed: closeAccount()
+    Closed --> [*]
