@@ -20,8 +20,9 @@
 - Exemplar: Strategy Pattern in an Online Shopping System
 
 ## Preparation Notes
-- The supplied question set contains 18 questions. Original wording, marks, frequency ranges and difficulty labels are retained in the question bank.
-- Three supplementary syllabus answers are included for Pattern Description, Idioms and Style, and Exemplar.
-- Supplementary answers are not presented as previous-year questions.
-- The PYQ analysis reproduces supplied frequency metadata and clearly states that independent paper-wise verification has not been performed.
+- The supplied question set contains 18 questions.
+- The complete answers and question bank now show the observed 5-, 6- and 8-mark allocations from the original papers. Question numbers are not mark allocations.
+- Q13 (Command Processor) and Q14 (Forwarder-Receiver) are syllabus-completion answers prepared for 5 marks; they are not labelled as verified PYQs.
+- Three supplementary syllabus answers cover Pattern Description, Idioms and Style, and the Design Pattern Exemplar.
+- Supplied frequency figures and priority labels are retained as preparation metadata and are distinguished from independently checked marks.
 - Editable Mermaid diagram source files are provided in the diagrams folder.
