@@ -1,0 +1,13 @@
+flowchart TB
+ C[Customer] --> UI[ATM User Interface]
+ UI --> CR[Card Reader]
+ UI --> PIN[PIN Authentication]
+ PIN --> BS[Bank Server]
+ BS --> AUTH[Authentication Service]
+ AUTH --> DB[(Bank Database)]
+ BS --> TP[Transaction Processing]
+ TP --> DB
+ TP --> CD[Cash Dispenser]
+ TP --> RP[Receipt Printer]
+ CD --> C
+ RP --> C
