@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> DialTone: liftHandset
+    DialTone --> Connecting: dialNumber
+    Connecting --> BusyTone: busySignal
+    Connecting --> Connected: callAnswered
+    BusyTone --> Idle: hangUp
+    Connected --> Idle: hangUp
+    Idle --> [*]

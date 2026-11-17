@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> CheckingCash: dispenseRequest(amount)
+    CheckingCash --> OutOfCash: cash unavailable
+    CheckingCash --> Dispensing: cash available
+    OutOfCash --> Idle: refillCash()
+    Dispensing --> Idle: dispenseComplete
+    Dispensing --> Fault: dispensingError
+    Fault --> Idle: reset
+    Idle --> [*]

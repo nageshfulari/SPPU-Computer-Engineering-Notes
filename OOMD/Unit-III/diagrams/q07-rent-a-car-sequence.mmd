@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor Customer
+    participant App as Rental Application
+    participant DB as Car Database
+    participant Availability as Availability Service
+    participant Booking as Booking Service
+    participant Notify as Notification Service
+    Customer->>App: Choose car type
+    App->>DB: Retrieve matching cars
+    DB-->>App: Car list
+    App-->>Customer: Display cars
+    Customer->>App: Select car and rental dates
+    App->>Availability: Check car and dates
+    Availability-->>App: Availability and rate
+    App-->>Customer: Display availability and rate
+    alt Car available and customer confirms
+        Customer->>App: Confirm booking
+        App->>Booking: Create booking
+        Booking->>DB: Store booking details
+        DB-->>Booking: Booking ID
+        Booking-->>App: Booking confirmed
+        App->>Notify: Send confirmation
+        Notify-->>Customer: Electronic confirmation
+    else Car unavailable or customer cancels
+        App-->>Customer: Show alternatives or cancellation
+    end

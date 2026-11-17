@@ -1,0 +1,13 @@
+sequenceDiagram
+    actor Customer
+    participant ATM
+    participant Bank as Bank Server
+    Customer->>ATM: Insert card
+    Customer->>ATM: Enter PIN
+    ATM->>Bank: Validate PIN
+    Bank-->>ATM: PIN valid
+    Customer->>ATM: Enter amount
+    ATM->>Bank: Check balance
+    Bank-->>ATM: Withdrawal approved
+    ATM->>ATM: Dispense cash
+    ATM-->>Customer: Deliver cash

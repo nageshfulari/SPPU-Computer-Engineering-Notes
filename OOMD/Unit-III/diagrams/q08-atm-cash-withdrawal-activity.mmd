@@ -1,0 +1,23 @@
+flowchart TD
+    A((Start)) --> B[Insert card]
+    B --> C[Enter PIN]
+    C --> D[Validate PIN]
+    D --> E{PIN valid?}
+    E -- No --> F[Show error]
+    F --> G{Retry available?}
+    G -- Yes --> C
+    G -- No --> H[End session]
+    E -- Yes --> I[Select cash withdrawal]
+    I --> J[Enter amount]
+    J --> K[Check account balance and ATM cash]
+    K --> L{Sufficient funds and cash?}
+    L -- No --> M[Show withdrawal error]
+    M --> N[Cancel or select another amount]
+    N --> J
+    L -- Yes --> O[Dispense cash]
+    O --> P[Record transaction]
+    P --> Q{Print receipt?}
+    Q -- Yes --> R[Print receipt]
+    Q -- No --> S((End))
+    R --> S
+    H --> S

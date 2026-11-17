@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> Active
+    state Active {
+        state "Dispensing Region" as DispensingRegion {
+            [*] --> Ready
+            Ready --> Dispensing: dispense request
+            Dispensing --> Ready: dispense complete
+        }
+        --
+        state "Monitoring Region" as MonitoringRegion {
+            [*] --> Monitoring
+            Monitoring --> LowCashAlert: cash below threshold
+            LowCashAlert --> Monitoring: cash replenished
+        }
+    }
+    Active --> [*]

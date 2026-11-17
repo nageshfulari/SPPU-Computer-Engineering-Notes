@@ -1,0 +1,22 @@
+flowchart TD
+    A((Start)) --> B[Patient arrives]
+    B --> C[Register or identify patient]
+    C --> D[Check patient record]
+    D --> E{Existing patient?}
+    E -- No --> F[Create patient record]
+    E -- Yes --> G[Book OPD visit]
+    F --> G
+    G --> H[Consult doctor]
+    H --> I[Examine and diagnose]
+    I --> J{Admission required?}
+    J -- Yes --> K[Admit patient and allocate bed]
+    K --> L[Provide treatment]
+    J -- No --> M[Prescribe medicine]
+    L --> N[Generate bill]
+    M --> N
+    N --> O[Record payment]
+    O --> P{Inpatient?}
+    P -- Yes --> Q[Discharge patient]
+    P -- No --> R[Complete OPD visit]
+    Q --> S((End))
+    R --> S

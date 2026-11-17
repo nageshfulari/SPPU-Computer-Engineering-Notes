@@ -46,7 +46,9 @@
 ## Formatting Notes
 
 - All notes are in Markdown and suitable for GitHub rendering.
-- UML diagrams are written as plain-text diagrams inside fenced code blocks.
+- UML diagrams in `Complete-Answers.md` use GitHub-rendered Mermaid blocks for clear viewing.
+- Editable `.mmd` source files for every diagram are stored in the [`diagrams/`](diagrams/README.md) folder.
+- Exam drawings should follow the standard UML symbols and the simplified structure explained in each answer.
 - No LaTeX is used.
 - The question bank distinguishes broad topic frequency from exact question repetition.
 

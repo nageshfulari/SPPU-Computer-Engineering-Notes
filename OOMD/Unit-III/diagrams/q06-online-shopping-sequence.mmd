@@ -1,0 +1,36 @@
+sequenceDiagram
+    actor Customer
+    participant App as Shopping Application
+    participant Catalogue as Product Catalogue
+    participant Cart
+    participant Order as Order Service
+    participant Inventory as Inventory Service
+    participant Payment as Payment Gateway
+    Customer->>App: Open application
+    Customer->>App: Search products
+    App->>Catalogue: Find matching products
+    Catalogue-->>App: Product list
+    App-->>Customer: Display products
+    Customer->>App: Select product
+    App->>Cart: Add item
+    Cart-->>App: Cart updated
+    Customer->>App: Checkout
+    App->>Order: Create pending order
+    Order->>Inventory: Reserve stock
+    Inventory-->>Order: Stock status
+    alt Stock available
+        Order->>Payment: Request payment
+        Payment-->>Order: Payment result
+        alt Payment successful
+            Order->>Inventory: Confirm stock reservation
+            Order-->>App: Confirm order
+            App-->>Customer: Display confirmation
+        else Payment failed
+            Order->>Inventory: Release stock reservation
+            Order-->>App: Order not confirmed
+            App-->>Customer: Display payment failure
+        end
+    else Stock unavailable
+        Order-->>App: Reject order
+        App-->>Customer: Display out-of-stock message
+    end

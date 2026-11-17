@@ -1,0 +1,12 @@
+flowchart LR
+    Customer@{ shape: person, label: "Customer" }
+    Withdraw([Withdraw Cash])
+    Validate([Validate PIN])
+    Print([Print Receipt])
+    Savings([Savings Account])
+    Account([Account])
+
+    Customer --- Withdraw
+    Withdraw -. "<<include>>" .-> Validate
+    Print -. "<<extend>>" .-> Withdraw
+    Savings -.->|generalizes| Account

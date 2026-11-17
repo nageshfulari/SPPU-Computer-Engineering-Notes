@@ -1,0 +1,36 @@
+flowchart LR
+    Customer@{ shape: person, label: "Customer" }
+    Bank@{ shape: person, label: "Bank Server" }
+    Staff@{ shape: person, label: "Maintenance Staff" }
+
+    subgraph ATM["ATM System"]
+        Withdraw([Withdraw Cash])
+        Balance([Check Balance])
+        Deposit([Deposit Cash])
+        ChangePIN([Change PIN])
+        Validate([Validate PIN])
+        GetBalance([Get Balance])
+        Update([Update Account])
+        Verify([Verify PIN])
+        Refill([Refill Cash])
+        Maintain([Maintain ATM])
+    end
+
+    Customer --- Withdraw
+    Customer --- Balance
+    Customer --- Deposit
+    Customer --- ChangePIN
+    Bank --- Validate
+    Bank --- GetBalance
+    Bank --- Update
+    Bank --- Verify
+    Staff --- Refill
+    Staff --- Maintain
+
+    Withdraw -. "<<include>>" .-> Validate
+    Withdraw -. "<<include>>" .-> Update
+    Balance -. "<<include>>" .-> Validate
+    Balance -. "<<include>>" .-> GetBalance
+    Deposit -. "<<include>>" .-> Validate
+    Deposit -. "<<include>>" .-> Update
+    ChangePIN -. "<<include>>" .-> Verify
