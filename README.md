@@ -2,6 +2,15 @@
 
 Subject-wise notes, previous-year question banks, diagrams, and exam-oriented answers for **Savitribai Phule Pune University (SPPU), Computer Engineering – 2019 Pattern**.
 
+## Design and Analysis of Algorithms (410241)
+
+- [Subject overview](DAA/README.md)
+- [Unit III – Greedy and Dynamic Programming](DAA/Unit-III/README.md)
+- [Unit III – Complete Answers](DAA/Unit-III/Complete-Answers.md)
+- [Unit III – Quick Revision](DAA/Unit-III/Quick-Revision.md)
+- [Unit III – Question Bank](DAA/Unit-III/Question-Bank.md)
+- [Unit III – PYQ Frequency Analysis](DAA/Unit-III/PYQ-Frequency-Analysis.md)
+
 ## Blockchain Technology (410243)
 
 - [Subject overview](Blockchain-Technology/README.md)
