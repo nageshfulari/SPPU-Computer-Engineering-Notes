@@ -31,6 +31,14 @@ This directory contains unit-wise, exam-oriented DAA notes prepared using the su
 - [Question Bank](Unit-V/Question-Bank.md)
 - [PYQ Frequency Analysis](Unit-V/PYQ-Frequency-Analysis.md)
 
+## Unit VI — Multithreaded and Distributed Algorithms
+
+- [Unit overview and syllabus coverage](Unit-VI/README.md)
+- [Complete Answers](Unit-VI/Complete-Answers.md)
+- [Quick Revision](Unit-VI/Quick-Revision.md)
+- [Question Bank](Unit-VI/Question-Bank.md)
+- [PYQ Frequency Analysis](Unit-VI/PYQ-Frequency-Analysis.md)
+
 ## Preparation conventions
 
 - Answers follow the SPPU exam-oriented structure and are sized according to the marks.
@@ -41,4 +49,4 @@ This directory contains unit-wise, exam-oriented DAA notes prepared using the su
 
 ## Scope note
 
-Units III, IV and V have been organized. Units I, II and VI will be added separately after their respective content is organized and checked.
+Units III, IV, V and VI have been organized. Units I and II will be added separately after their respective content is organized and checked.
