@@ -39,3 +39,6 @@ Each unit will follow the structure used in the DAA notes:
 ## Source and Accuracy Note
 
 The official SPPU syllabus is the primary boundary. PYQ frequency and marks are reported only where supported by the supplied question bank or question papers.
+## Unit V — Unsupervised Learning
+
+[Unit V README](Unit-V/README.md) · [Complete Answers](Unit-V/Complete-Answers.md) · [Question Bank](Unit-V/Question-Bank.md) · [Quick Revision](Unit-V/Quick-Revision.md) · [PYQ Frequency Analysis](Unit-V/PYQ-Frequency-Analysis.md)
