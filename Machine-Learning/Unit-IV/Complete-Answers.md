@@ -1,6 +1,6 @@
 # Machine Learning – Supervised Learning: Classification
 
-> Source: ENDSEM ML.docx supplied by the user. The answer text below is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
+> Source: ENDSEM ML.docx supplied by the user. Answer text is transferred from the source in its original question order. Text and tables are retained where extractable; embedded diagram/formula images in the Word document may not appear in this Markdown transcription.
 
 Q. Explain the Support Vector Machine (SVM) algorithm with a suitable diagram. Explain how SVM finds the
 optimal hyperplane for classification. (5–6 Marks)
@@ -2047,3 +2047,204 @@ Useful for overall model performance.              Useful for evaluating imbalan
 Micro-Average measures the overall classification performance by combining results of all classes, whereas Macro-
 Average calculates the average performance of individual classes. Both methods are useful for evaluating multiclass
 classification models.
+
+
+Q. What is K-Fold Cross-Validation? Explain its working and discuss the effect of choosing a very large or very small
+value of K. (9 Marks)
+
+1. Introduction
+
+K-Fold Cross-Validation is a model evaluation technique used in Machine Learning to estimate how well a model
+performs on unseen data.
+
+In this technique, the dataset is divided into K equal or nearly equal parts called folds. The model is trained and
+tested K times using different folds.
+
+
+2. Working of K-Fold Cross-Validation
+
+The working process is as follows:
+
+    1. Divide the Dataset: Divide the complete dataset into K equal or nearly equal folds.
+
+    2. Select Training and Testing Data: In the first iteration, use one fold for testing and the remaining K-1 folds for
+       training.
+
+    3. Train the Model: Train the model using the training folds.
+
+    4. Evaluate the Model: Test the trained model using the selected testing fold.
+
+    5. Repeat the Process: Repeat the process K times, selecting a different fold for testing each time.
+
+    6. Calculate Average Performance: Calculate the average of all K evaluation scores to obtain the final
+       performance.
+
+3. Diagram of 5-Fold Cross-Validation
+
+Consider a dataset divided into five folds.
+
+
+Each fold is used exactly once for testing and K-1 times for training.
+
+4. Example
+
+Suppose a dataset contains 1000 records and we choose K = 5.
+
+       Total records = 1000
+
+       Number of folds = 5
+
+       Records in each fold = 1000 / 5 = 200
+
+Iteration
+
+Training Records
+
+Testing Records
+
+
+Average Accuracy:
+
+= (85 + 90 + 88 + 87 + 90) / 5
+
+= 440 / 5
+
+= 88%
+
+Therefore, the estimated model accuracy is 88%.
+
+5. Effect of Choosing a Very Small or Very Large K
+
+The value of K affects the training time, computational cost and reliability of model evaluation.
+
+A. Very Small K (e.g., K = 2)
+
+       Each model is trained using a smaller portion of the dataset.
+
+       Training time is generally lower because fewer models are trained.
+
+       The performance estimate may have high bias because each model uses less training data.
+
+       Results may depend heavily on how the dataset is divided.
+
+B. Very Large K (e.g., K = 50 or K = N)
+
+       Each model is trained using almost the entire dataset.
+
+       Training time and computational cost increase because many models must be trained.
+
+       Each testing fold contains very few records.
+
+       Evaluation results can have high variability, especially when the dataset is small.
+
+       When K equals the total number of records (N), it is called Leave-One-Out Cross-Validation (LOOCV).
+
+6. Advantages of K-Fold Cross-Validation
+
+    1. Better Evaluation: Provides a more reliable estimate than a single train-test split in many situations.
+
+
+    2. Efficient Data Usage: Every record is used for both training and testing.
+
+    3. Model Comparison: Helps compare different machine learning algorithms.
+
+    4. Overfitting Detection: Helps identify models that do not generalize well to unseen data.
+
+    5. Hyperparameter Tuning: Helps select suitable model parameters.
+
+7. Conclusion
+
+K-Fold Cross-Validation is an effective technique for evaluating machine learning models. It uses different training and
+testing combinations and calculates average performance. A commonly used value is K = 5 or K = 10, depending on
+dataset size and computational resources.
+
+
+Q. Explain the methods used for evaluating classification models. (5 Marks)
+
+1. Introduction
+
+Classification model evaluation is the process of measuring how effectively a machine learning model predicts class
+labels.
+
+Different evaluation methods are used to check the accuracy, reliability and generalization ability of a classification
+model.
+
+2. Methods Used for Evaluating Classification Models
+
+1. Confusion Matrix
+
+A confusion matrix is a table used to compare actual class labels with predicted class labels.
+
+It consists of four values:
+
+       True Positive (TP): Correctly predicted positive cases.
+
+       True Negative (TN): Correctly predicted negative cases.
+
+       False Positive (FP): Negative cases incorrectly predicted as positive.
+
+       False Negative (FN): Positive cases incorrectly predicted as negative.
+
+2. Accuracy
+
+Accuracy measures the percentage of total predictions that are correct.
+
+Formula:
+
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+3. Precision
+
+Precision measures how many predicted positive cases are actually positive.
+
+Formula:
+
+Precision = TP / (TP + FP)
+
+4. Recall (Sensitivity)
+
+Recall measures how many actual positive cases are correctly identified.
+
+Formula:
+
+Recall = TP / (TP + FN)
+
+
+5. F1-Score
+
+F1-Score is the harmonic mean of Precision and Recall.
+
+Formula:
+
+F1-Score = 2 × (Precision × Recall) / (Precision + Recall)
+
+6. Specificity
+
+Specificity measures how many actual negative cases are correctly identified.
+
+Formula:
+
+Specificity = TN / (TN + FP)
+
+7. K-Fold Cross-Validation
+
+In this method, the dataset is divided into K folds. The model is trained K times, using a different fold for testing in
+each iteration. The average performance is calculated to estimate model performance on unseen data.
+
+3. Importance of Classification Model Evaluation
+
+    1. Helps measure the performance of a classification algorithm.
+
+    2. Identifies incorrect predictions and classification errors.
+
+    3. Helps compare different machine learning models.
+
+    4. Helps detect poor performance on imbalanced datasets.
+
+    5. Helps select the most suitable model for a particular application.
+
+4. Conclusion
+
+Classification evaluation methods help determine how accurately and reliably a model classifies data. Metrics such as
+Accuracy, Precision, Recall, F1-Score and Specificity, along with the Confusion Matrix and K-Fold Cross-Validation, are
+useful for evaluating classification models.
