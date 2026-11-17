@@ -70,8 +70,8 @@ stateDiagram-v2
 
 ### Relationships
 1. **Association:** Communication link between an actor and a use case, shown by a solid line. Example: Customer — Withdraw Cash.
-2. **Include:** Mandatory reuse of another use case. A dashed arrow labelled `<<include>>` points from the base use case to the included use case. Example: Withdraw Cash includes Validate PIN.
-3. **Extend:** Optional or conditional behavior added to a base use case. A dashed arrow labelled `<<extend>>` points from the extending use case to the base use case. Example: Print Receipt extends Withdraw Cash.
+2. **Include:** Mandatory reuse of another use case. A dashed arrow labelled \`<<include>>\` points from the base use case to the included use case. Example: Withdraw Cash includes Validate PIN.
+3. **Extend:** Optional or conditional behavior added to a base use case. A dashed arrow labelled \`<<extend>>\` points from the extending use case to the base use case. Example: Print Receipt extends Withdraw Cash.
 4. **Generalization:** Inheritance between actors or use cases. A solid line with a hollow triangle points to the general parent. Example: Savings Account and Current Account specialize Account.
 
 ### Example
@@ -104,7 +104,7 @@ flowchart LR
 ### Use Case Diagram
 ```mermaid
 flowchart LR
-    Customer["🧍 Customer"]
+    Customer@{ shape: actor, label: "Customer" }
     Bank@{ shape: actor, label: "Bank Server" }
     Staff@{ shape: actor, label: "Maintenance Staff" }
 
@@ -177,7 +177,7 @@ flowchart LR
 ### Use Case Diagram
 ```mermaid
 flowchart LR
-    Customer["🧍 Customer"]
+    Customer@{ shape: actor, label: "Customer" }
     Admin@{ shape: actor, label: "Administrator" }
     Gateway@{ shape: actor, label: "Payment Gateway" }
 
@@ -238,7 +238,7 @@ A **Sequence Model** represents interactions among objects in chronological orde
 6. **Destruction Occurrence:** An X at the end of a lifeline indicates that the object is destroyed.
 
 ### Example – ATM Cash Withdrawal
-```text
+\`\`\`text
 Customer          ATM             Bank Server
    |               |                   |
    |--Insert Card->|                   |
@@ -251,7 +251,7 @@ Customer          ATM             Bank Server
    |               |--Dispense Cash    |
    |<--Receive Cash|                   |
    |               |                   |
-```
+\`\`\`
 
 **Conclusion:** A Sequence Diagram explains which participants communicate, what messages they exchange and the order in which messages occur.
 
@@ -263,7 +263,7 @@ Customer          ATM             Bank Server
 Customer, Shopping Application, Product Catalogue, Cart, Order Service, Payment Gateway and Inventory Service.
 
 ### Sequence Diagram
-```text
+\`\`\`text
 Customer  App  Catalogue  Cart  Order  Payment  Inventory
    |       |       |       |      |       |         |
    |--Open->|       |       |      |       |         |
@@ -282,7 +282,7 @@ Customer  App  Catalogue  Cart  Order  Payment  Inventory
    |       |                         |<--Payment Result------|
    |       |<--Order Confirmation----|       |         |
    |<--Display Confirmation|         |       |         |
-```
+\`\`\`
 
 ### Explanation
 1. Customer searches for products and the application retrieves matching products from the catalogue.
@@ -301,7 +301,7 @@ Customer  App  Catalogue  Cart  Order  Payment  Inventory
 Customer, Rental Application, Car Database, Availability Service, Booking Service and Notification Service.
 
 ### Sequence Diagram
-```text
+\`\`\`text
 Customer  Rental App  Car DB  Availability  Booking  Notification
    |          |        |          |           |          |
    |--Choose Car Type->|          |           |          |
@@ -318,7 +318,7 @@ Customer  Rental App  Car DB  Availability  Booking  Notification
    |          |----------------------------------------->|
    |          |<----------------Confirmation Sent--------|
    |<--Electronic Confirmation|    |          |          |
-```
+\`\`\`
 
 ### Explanation
 1. Customer selects a car category, such as family car or sports car.
@@ -346,7 +346,7 @@ An **Activity** is a behavior consisting of coordinated actions performed to ach
 5. **PIN Change:** Customer selects PIN change, verifies the existing PIN and enters a new PIN. The system validates and updates it.
 
 ### Activity Diagram – Cash Withdrawal
-```text
+\`\`\`text
              ●
              |
         Insert Card
@@ -372,7 +372,7 @@ An **Activity** is a behavior consisting of coordinated actions performed to ach
        +-----+------ Print Receipt (if requested)
                          |
                          ◎
-```
+\`\`\`
 
 **Conclusion:** ATM activities describe individual banking operations. The diagram shows workflow and decisions involved in cash withdrawal.
 
@@ -394,16 +394,16 @@ An **Activity** is a behavior consisting of coordinated actions performed to ach
 ### Simple Difference in Representation
 
 **Sequence Diagram**
-```text
+\`\`\`text
 Customer       ATM       Bank Server
    |            |              |
    |--Enter PIN>|              |
    |            |--Validate--->|
    |            |<--Result------|
-```
+\`\`\`
 
 **Activity Diagram**
-```text
+\`\`\`text
    ●
    |
 Enter PIN
@@ -415,7 +415,7 @@ Validate PIN
  No      Yes
  |        |
 Error   Show Menu
-```
+\`\`\`
 
 **Conclusion:** A Sequence Diagram answers which participant communicates with whom and in what order. An Activity Diagram answers what steps are performed and how the workflow proceeds.
 
@@ -424,7 +424,7 @@ Error   Show Menu
 ## Q10. Draw an Activity Diagram for ATM Machine.
 
 ### Activity Diagram
-```text
+\`\`\`text
                   ●
                   |
              Insert Card
@@ -459,7 +459,7 @@ Error   Show Menu
             +---- Print Receipt (optional)
                         |
                         ◎
-```
+\`\`\`
 
 ### Explanation
 1. Customer inserts the ATM card and enters the PIN.
@@ -487,7 +487,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 - **Concurrent Activities:** A thick bar represents a fork when one flow splits into parallel flows and a join when parallel flows synchronize.
 
 ### 3. Activity Diagram – Email Login
-```text
+\`\`\`text
                  ●
                  |
           Open Email Website
@@ -513,7 +513,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
                  Display Inbox
                         |
                         ◎
-```
+\`\`\`
 
 ### Explanation
 1. User opens the email website or application.
@@ -529,7 +529,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 ## Q12. Draw an Activity Diagram for Hospital Management System.
 
 ### Activity Diagram
-```text
+\`\`\`text
                   ●
                   |
            Patient Arrives
@@ -572,7 +572,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
                  Discharge
                      |
                      ◎
-```
+\`\`\`
 
 ### Explanation
 1. Patient arrives and is registered or identified using an existing record.
@@ -590,7 +590,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
 ## Q13. Draw an Activity Diagram for describing how selling a two-wheeler to a customer takes place at a dealer's place. Explain the notations used.
 
 ### Activity Diagram
-```text
+\`\`\`text
                     ●
                     |
              Customer Visits Dealer
@@ -634,7 +634,7 @@ An **Activity** is a sequence of actions performed to complete a task or achieve
                               Deliver Vehicle
                                    |
                                    ◎
-```
+\`\`\`
 
 ### Explanation
 1. Customer visits the dealership and enquires about available two-wheeler models.
@@ -675,7 +675,7 @@ Common interaction diagrams include Sequence, Communication (Collaboration), Int
 6. **Destruction Occurrence:** An X marking the end of an object's lifeline when destroyed.
 
 ### Example – ATM Interaction
-```text
+\`\`\`text
 Customer          ATM          Bank Server
    |               |                |
    |--Enter PIN--->|                |
@@ -685,7 +685,7 @@ Customer          ATM          Bank Server
    |               |--Check Balance>|
    |               |<--Approved------|
    |<--Cash--------|                |
-```
+\`\`\`
 
 **Conclusion:** An Interaction Diagram models communication among objects. A Sequence Diagram specifically emphasizes chronological order of exchanged messages.
 
@@ -710,7 +710,7 @@ The **State Model** represents the dynamic behavior of an object. It shows the s
 **Class Model:** Account may have attributes accountNumber, balance and status, and operations deposit(), withdraw() and block().
 
 **State Model**
-```text
+\`\`\`text
              ●
              |
           Active
@@ -728,7 +728,7 @@ The **State Model** represents the dynamic behavior of an object. It shows the s
           Closed
              |
              ◎
-```
+\`\`\`
 
 The Class Model defines the Account class and its features; the State Model describes how an Account object changes from Active to Blocked or Closed.
 
@@ -739,7 +739,7 @@ The Class Model defines the Account class and its features; the State Model desc
 ## Q16. Draw a State Diagram for Cash Dispenser and explain concurrency.
 
 ### State Diagram – Cash Dispenser
-```text
+\`\`\`text
                   ●
                   |
                  Idle
@@ -760,7 +760,7 @@ The Class Model defines the Account class and its features; the State Model desc
        Cash Available    Idle
             |
             +-----------> Idle
-```
+\`\`\`
 
 ### Explanation
 1. **Idle:** Dispenser waits for a dispense request.
@@ -774,7 +774,7 @@ The Class Model defines the Account class and its features; the State Model desc
 
 Example: While a cash dispenser is active, its dispensing mechanism handles a request while a monitoring region independently monitors cash levels and reports low cash.
 
-```text
+\`\`\`text
 +---------------------------------------------+
 |          Cash Dispenser Active              |
 |                                             |
@@ -786,7 +786,7 @@ Example: While a cash dispenser is active, its dispensing mechanism handles a re
 | |                       |                   |
 | Complete                Low Cash Alert      |
 +---------------------------------------------+
-```
+\`\`\`
 
 The two regions are active concurrently; one controls dispensing while the other monitors cash availability.
 
@@ -797,7 +797,7 @@ The two regions are active concurrently; one controls dispensing while the other
 ## Q17. Draw a State Diagram for Telephone Line Connection. Explain Event, State and Transition in the diagram.
 
 ### State Diagram
-```text
+\`\`\`text
                   ●
                   |
                  Idle
@@ -821,7 +821,7 @@ The two regions are active concurrently; one controls dispensing while the other
                   |
                   v
                  Idle
-```
+\`\`\`
 
 ### 1. State
 A **State** is a condition of an object at a particular time. Telephone line states include:
