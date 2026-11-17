@@ -48,3 +48,7 @@
 - Do not add unnecessary content after the conclusion.
 
 **Coverage status:** The Unit III question bank and PYQ summary are organized. The full answer and quick-revision files will be populated from the previously prepared answer set, preserving its complete content.
+
+## Visual diagrams
+
+The complete answers include restored, readable SVG redrawings of the key source visuals: bias and variance, bias–variance trade-off, underfitting/good fit/overfitting, linear regression, least-squares derivation and coefficient formulas, and Gradient Descent. See the `Images/` folder.
